@@ -446,6 +446,7 @@ a { color: inherit; }
 .exp-campos dd {
   margin: 0; padding: 1.2rem 0;
   border-top: 1px solid var(--pauta);
+  min-width: 0;   /* sin esto, la tabla de min-width:30rem revienta la columna del grid */
 }
 .exp-campos dd > p { margin: 0 0 .8rem; max-width: 62ch; }
 .exp-campos dd > p:last-child { margin-bottom: 0; }
@@ -466,7 +467,7 @@ a { color: inherit; }
 }
 
 /* Tabla de impacto */
-.exp-scroll { overflow-x: auto; }
+.exp-scroll { overflow-x: auto; max-width: 100%; }
 .exp-tabla { border-collapse: collapse; width: 100%; font-size: .88rem; min-width: 30rem; }
 .exp-tabla caption {
   text-align: left; font-size: .72rem; letter-spacing: .08em;
