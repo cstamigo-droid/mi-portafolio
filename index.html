@@ -9,7 +9,7 @@
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Cristian Amigo — Desarrollador Java backend">
-<meta property="og:description" content="Diecinueve repositorios y ocho servicios publicados. Cada uno con su enlace abierto y la fecha en que se comprobó que responde.">
+<meta property="og:description" content="Veintiún repositorios y ocho servicios publicados. Cada uno con su enlace abierto y la fecha en que se comprobó que responde.">
 <meta property="og:url" content="https://cstamigo-droid.github.io/mi-portafolio/">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
@@ -88,7 +88,7 @@
     <div class="nota-metodo">
       <p class="rotulo">En números</p>
       <ul class="cifras">
-        <li><span>19</span> repositorios públicos</li>
+        <li><span>21</span> repositorios públicos</li>
         <li><span>8</span> servicios y páginas en línea</li>
         <li><span>5</span> paquetes publicados en PyPI</li>
         <li><span>26</span> enlaces verificados el 22-08-2026</li>
@@ -130,6 +130,39 @@
         <div class="col-sello">
           <span class="sello">200<span>22-08-2026</span></span>
           <span class="etiqueta">Spring Boot</span>
+        </div>
+      </article>
+
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>CERBERO</h3>
+          <p class="pila">Java 21 · POO · polimorfismo · DAO · Servlets · JUnit 5</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Freno de despacho para comercio electrónico: <strong>ningún pedido sale mientras
+            tenga una gestión abierta</strong>. Reúne WhatsApp, Instagram y correo en una bandeja,
+            y cada tipo de ticket decide por sí mismo si bloquea el envío.
+          </p>
+          <p class="detalle">
+            Salió de un problema real que viví como cliente: avisé un error de dirección en menos
+            de una hora y el paquete salió igual, porque el mensaje y el sistema de despacho no se
+            cruzaban. No era una falla técnica — <em>nadie preguntaba si había un ticket abierto</em>.
+            CERBERO es esa pregunta convertida en código.
+          </p>
+          <p class="detalle">
+            Dos de las cinco pruebas son <strong>controles negativos</strong>: comprueban que el
+            freno <em>no</em> actúa cuando no corresponde. Un freno que retiene de más es tan
+            inútil como uno que no retiene.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/cstamigo-droid/cerbero-postventa">Código y pruebas →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">5/5<span>PRUEBAS</span></span>
+          <span class="etiqueta">De un caso real</span>
         </div>
       </article>
 
@@ -175,13 +208,20 @@
             Esa restricción se decidió antes de escribir el primer detector, porque una
             herramienta que revisa datos ajenos tiene que poder explicar qué no hace.
           </p>
+          <p class="detalle">
+            <strong>La prueba que importa es la del round-trip:</strong> empaquetar y descomprimir
+            una carpeta y comprobar que los datos vuelven <em>byte a byte</em>. En una herramienta
+            de respaldos, demostrar que se restaura es parte del producto. El checksum se valida
+            además contra un SHA-256 calculado por fuera, como control positivo: sin eso, una
+            implementación consistentemente equivocada pasaría igual.
+          </p>
           <p class="enlaces">
             <a href="https://github.com/cstamigo-droid/respaldo-pyme-agent">Código →</a>
           </p>
         </div>
         <div class="col-sello">
           <span class="sello">200<span>22-08-2026</span></span>
-          <span class="etiqueta">Java puro</span>
+          <span class="etiqueta">10 pruebas</span>
         </div>
       </article>
 
@@ -619,8 +659,6 @@
         <dt>Asistentes y automatización</dt>
         <dd>Fábrica de servidores MCP, agente de búsqueda de empleo, generador de contenido y un sistema de gestión de conocimiento con recuperación por citas.</dd>
 
-        <dt>Plataforma de postventa</dt>
-        <dd>Modelo de dominio en Java con herencia, polimorfismo y pruebas unitarias, pensado como base de un servicio de postventa para pequeñas empresas.</dd>
       </dl>
     </section>
 
