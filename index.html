@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cristian Amigo — Desarrollador Java backend</title>
-<meta name="description" content="Portafolio de Cristian Amigo, desarrollador Java backend. Aplicaciones Spring Boot, servicios, paquetes publicados y herramientas, cada uno con su enlace verificado.">
+<meta name="description" content="Portafolio de Cristian Amigo, desarrollador Java backend. Aplicaciones Spring Boot, un caso de estudio documentado, servicios, paquetes publicados y herramientas, cada uno con su enlace verificado.">
 <link rel="canonical" href="https://cstamigo-droid.github.io/mi-portafolio/">
 
 <meta property="og:type" content="profile">
@@ -62,6 +62,7 @@
       <p class="rotulo">Índice</p>
       <ol>
         <li><a href="#java">Aplicaciones Java</a></li>
+        <li><a href="#caso">Caso de estudio</a></li>
         <li><a href="#servicios">Servicios y APIs</a></li>
         <li><a href="#frontend">Front-end y datos</a></li>
         <li><a href="#publicado">Herramientas publicadas</a></li>
@@ -266,9 +267,160 @@
       </article>
     </section>
 
-    <!-- ===================== 02 · SERVICIOS ===================== -->
+
+    <!-- ===================== 02 · CASO DE ESTUDIO ===================== -->
+    <section id="caso" aria-labelledby="t-caso">
+      <h2 id="t-caso" class="titulo-seccion"><span class="num">02</span> Caso de estudio</h2>
+      <p class="entrada-seccion">
+        De todo lo que construí durante el curso, esto es lo que mejor muestra cómo trabajo. No es
+        el proyecto más grande: es el problema que más me costó, y el que más me enseñó.
+      </p>
+
+      <article class="expediente">
+        <header class="exp-cabecera">
+          <p class="exp-rotulo">Caso de estudio · SpringEduManager</p>
+          <h3>El 401 que sí se generaba, y algo se comía tres pasos después</h3>
+          <p class="exp-fecha">Agosto de 2026 · Java 21 · Spring Boot · Spring Security</p>
+        </header>
+
+        <dl class="exp-campos">
+          <dt>La actividad</dt>
+          <dd>
+            Cierre del proyecto del módulo de Spring: revisar la aplicación entera antes de
+            presentarla, depurarla y dejarla lista para el portafolio. Gestiona estudiantes, cursos
+            y evaluaciones, con dos roles y una API REST para integrarse con otros sistemas.
+          </dd>
+
+          <dt>El desafío</dt>
+          <dd>
+            <p>
+              La aplicación <em>parecía</em> terminada: compilaba, las pruebas pasaban y todos los
+              flujos del navegador funcionaban. Al ejercitarla por HTTP encontré que la API
+              respondía <strong>302</strong> —un redirect al formulario de login en HTML— cuando
+              debía responder <strong>401</strong>.
+            </p>
+            <p>
+              Para un navegador da igual. Para un programa que consuma la API es grave: sigue el
+              redirect, recibe el HTML del login con estado 200, y <strong>no puede distinguir un
+              rechazo de una respuesta válida</strong>. La promesa de interoperabilidad del proyecto
+              no se sostenía.
+            </p>
+            <p class="exp-nota">
+              Lo difícil no fue verlo: fue que <strong>el primer arreglo no funcionó</strong>.
+              Declaré un punto de entrada explícito para la API y siguió devolviendo 302.
+            </p>
+          </dd>
+
+          <dt>La solución</dt>
+          <dd>
+            <p>La causa real estaba un nivel más abajo, y sólo apareció al seguir la petición completa:</p>
+            <ol class="exp-pasos">
+              <li>Spring responde el 401 con <code>sendError()</code>.</li>
+              <li>Eso hace que Tomcat <strong>re-despache la petición internamente hacia <code>/error</code></strong>.</li>
+              <li>Ese re-despacho <strong>vuelve a pasar por el filtro de seguridad</strong>, pero ahora la ruta ya no calza con <code>/api/**</code>.</li>
+              <li>La atiende la cadena web, que exigía autenticación, y <strong>sobrescribe el 401 con un 302</strong>.</li>
+            </ol>
+            <p>
+              El 401 sí se generaba; algo se lo comía después. La cabecera
+              <code>WWW-Authenticate</code> sobrevivía porque ya estaba escrita, y esa contradicción
+              fue la pista. <strong>El arreglo fue declarar <code>/error</code> como ruta pública:
+              una línea.</strong> Encontrarlo fue el trabajo.
+            </p>
+          </dd>
+
+          <dt>Herramientas</dt>
+          <dd>
+            <p>
+              <strong>Java 21 · Spring Boot · Spring Security · Spring Data JPA · Maven · JUnit</strong>
+              para el producto.
+            </p>
+            <p>
+              Para el diagnóstico, <strong>cURL sobre la aplicación corriendo</strong>, leyendo
+              cabeceras y códigos de estado. Elegí esa herramienta a propósito: el problema era
+              invisible desde el navegador y desde las pruebas unitarias, porque los dos ocultan el
+              redirect. Sólo un cliente que <em>no</em> lo siga automáticamente lo muestra.
+            </p>
+          </dd>
+
+          <dt>Impacto medido</dt>
+          <dd>
+            <div class="exp-scroll">
+            <table class="exp-tabla">
+              <caption>Medido sobre la aplicación corriendo, antes y después del cambio</caption>
+              <thead>
+                <tr><th scope="col">Comprobación</th><th scope="col">Antes</th><th scope="col">Después</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>API sin credenciales</td><td class="mal">302 → HTML</td><td class="bien">401</td></tr>
+                <tr><td>¿Redirige a una página?</td><td class="mal">sí</td><td class="bien">no</td></tr>
+                <tr><td>Error de validación</td><td class="mal">400 sin detalle</td><td class="bien">400 con campo y motivo</td></tr>
+                <tr><td>Comprobaciones automatizadas</td><td class="mal">0</td><td class="bien">35</td></tr>
+                <tr><td>Resultado de la suite</td><td class="mal">—</td><td class="bien">35 / 35</td></tr>
+                <tr><td>Regresiones en los flujos web</td><td>—</td><td class="bien">0</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="exp-nota">
+              Las 35 comprobaciones quedaron en un guion reutilizable: la revisión dejó de ser un
+              recorrido manual que hay que recordar y pasa a correrse en un comando.
+            </p>
+          </dd>
+
+          <dt>Aprendizajes</dt>
+          <dd>
+            <ol class="exp-pasos">
+              <li>
+                <strong>Un código de estado correcto puede estar generado por el motivo equivocado.</strong>
+                Cuatro de mis primeras comprobaciones fallaron y resultaron ser errores del guion de
+                prueba, no del producto. La más peligrosa fue una que <em>pasaba</em>: devolvía 400
+                por un JSON mal formado, no por la validación. Estaba en verde sin medir nada.
+              </li>
+              <li>
+                <strong>Probar desde el navegador no es probar una API.</strong> Son dos clientes
+                distintos y sólo uno de los dos perdona.
+              </li>
+              <li>
+                <strong>Cuando el primer arreglo no funciona, la hipótesis está mal.</strong>
+                Insistir con variantes del mismo parche habría gastado horas; seguir la petición
+                paso a paso lo resolvió.
+              </li>
+            </ol>
+          </dd>
+
+          <dt>Habilidades aplicadas</dt>
+          <dd>
+            Depuración de una cadena de filtros de seguridad · configuración de Spring Security ·
+            diseño de respuestas de una API REST · manejo de excepciones con
+            <code>@RestControllerAdvice</code> · pruebas de integración por HTTP · control de
+            versiones con Git · documentación técnica del cambio.
+          </dd>
+
+          <dt>Por qué elegí este caso</dt>
+          <dd>
+            <p>
+              Porque muestra lo que quiero que se vea de mí, y no lo que quedó más lucido. Podría
+              haber elegido el proyecto con más pantallas; elegí el problema donde
+              <strong>todo indicaba que estaba terminado y no lo estaba</strong>.
+            </p>
+            <p>
+              Vengo de casi diez años en soporte de TI, arreglando lo que otros construían. De ahí
+              me quedó la costumbre de no confiar en que algo funcione porque compila. Este caso es
+              esa costumbre aplicada a mi propio código, y encontrar un error propio, admitir que el
+              primer intento de arreglo falló y dejarlo documentado me parece mejor carta de
+              presentación que un proyecto donde supuestamente nada falló.
+            </p>
+          </dd>
+        </dl>
+
+        <footer class="exp-pie">
+          <a href="https://github.com/cstamigo-droid/springedumanager">Ver el proyecto y el commit del arreglo →</a>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===================== 03 · SERVICIOS ===================== -->
     <section id="servicios" aria-labelledby="t-servicios">
-      <h2 id="t-servicios" class="titulo-seccion"><span class="num">02</span> Servicios y APIs</h2>
+      <h2 id="t-servicios" class="titulo-seccion"><span class="num">03</span> Servicios y APIs</h2>
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
@@ -328,7 +480,7 @@
 
     <!-- ===================== 03 · FRONT-END ===================== -->
     <section id="frontend" aria-labelledby="t-frontend">
-      <h2 id="t-frontend" class="titulo-seccion"><span class="num">03</span> Front-end y datos</h2>
+      <h2 id="t-frontend" class="titulo-seccion"><span class="num">04</span> Front-end y datos</h2>
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
@@ -381,7 +533,7 @@
 
     <!-- ===================== 04 · PUBLICADO ===================== -->
     <section id="publicado" aria-labelledby="t-publicado">
-      <h2 id="t-publicado" class="titulo-seccion"><span class="num">04</span> Herramientas publicadas</h2>
+      <h2 id="t-publicado" class="titulo-seccion"><span class="num">05</span> Herramientas publicadas</h2>
       <p class="entrada-seccion">
         Cinco paquetes están en el índice público de Python: cualquiera los instala con
         <code>pip install</code>, lo que obliga a algo que un repositorio no obliga —que el
@@ -450,7 +602,7 @@
 
     <!-- ===================== 05 · PROPIOS ===================== -->
     <section id="propios" aria-labelledby="t-propios">
-      <h2 id="t-propios" class="titulo-seccion"><span class="num">05</span> Sistemas propios</h2>
+      <h2 id="t-propios" class="titulo-seccion"><span class="num">06</span> Sistemas propios</h2>
       <p class="entrada-seccion">
         Además de lo anterior mantengo un conjunto de sistemas en repositorios privados, casi
         todos en Python. No los puedo enlazar, pero son donde practico arquitectura, tareas
@@ -474,7 +626,7 @@
 
     <!-- ===================== 06 · HERRAMIENTAS ===================== -->
     <section id="herramientas" aria-labelledby="t-herramientas">
-      <h2 id="t-herramientas" class="titulo-seccion"><span class="num">06</span> Con qué trabajo</h2>
+      <h2 id="t-herramientas" class="titulo-seccion"><span class="num">07</span> Con qué trabajo</h2>
       <dl class="pila-tecnica">
         <dt>Lenguaje y framework</dt>
         <dd>Java&nbsp;21 · Spring Boot · Spring MVC · Spring Data JPA · Spring Security · Thymeleaf · Maven</dd>
@@ -493,7 +645,7 @@
 
     <!-- ===================== 07 · CONTACTO ===================== -->
     <section id="contacto" aria-labelledby="t-contacto">
-      <h2 id="t-contacto" class="titulo-seccion"><span class="num">07</span> Contacto</h2>
+      <h2 id="t-contacto" class="titulo-seccion"><span class="num">08</span> Contacto</h2>
       <p class="entrada-seccion">
         Busco mi primer puesto como desarrollador Java backend, en Santiago o remoto.
       </p>

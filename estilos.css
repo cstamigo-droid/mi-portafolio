@@ -404,3 +404,94 @@ a { color: inherit; }
   .privados{ grid-template-columns:1fr; }
   .privados dd{ border-top:0; padding-top:0; }
 }
+
+/* =========================================================================
+   Caso de estudio — tratado como un EXPEDIENTE, no como una ficha más.
+   Se diferencia por: fondo propio, doble filete, campos en dos columnas
+   con rótulos en rojo de sello, y una tabla de antes/después.
+   ========================================================================= */
+
+.expediente {
+  background: var(--papel-hondo);
+  border-top: 3px double var(--tinta);
+  border-bottom: 3px double var(--tinta);
+  padding: 2rem 2rem 1.6rem;
+  margin-top: .5rem;
+}
+
+.exp-cabecera { border-bottom: 1px solid var(--pauta); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+.exp-rotulo {
+  margin: 0 0 .6rem;
+  font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--sello);
+}
+.exp-cabecera h3 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.08;
+  margin: 0 0 .7rem; max-width: 22ch;
+}
+.exp-fecha {
+  margin: 0; font-size: .74rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--grafito);
+}
+
+/* Campos del expediente: rótulo a la izquierda, contenido a la derecha */
+.exp-campos { margin: 0; display: grid; grid-template-columns: 1fr 3fr; gap: 0; }
+.exp-campos dt {
+  font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--sello); font-weight: 600;
+  padding: 1.2rem 1.5rem 1.2rem 0;
+  border-top: 1px solid var(--pauta);
+}
+.exp-campos dd {
+  margin: 0; padding: 1.2rem 0;
+  border-top: 1px solid var(--pauta);
+}
+.exp-campos dd > p { margin: 0 0 .8rem; max-width: 62ch; }
+.exp-campos dd > p:last-child { margin-bottom: 0; }
+
+.exp-nota {
+  font-size: .89rem; color: var(--grafito);
+  border-left: 2px solid var(--sello); padding-left: 1rem;
+  margin-top: 1rem !important;
+}
+
+.exp-pasos { margin: .4rem 0 0; padding-left: 1.3rem; max-width: 62ch; }
+.exp-pasos li { margin-bottom: .55rem; }
+.exp-pasos li::marker { color: var(--sello); font-weight: 600; }
+
+.expediente code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: .87em; background: var(--papel); padding: .08em .35em;
+}
+
+/* Tabla de impacto */
+.exp-scroll { overflow-x: auto; }
+.exp-tabla { border-collapse: collapse; width: 100%; font-size: .88rem; min-width: 30rem; }
+.exp-tabla caption {
+  text-align: left; font-size: .72rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--grafito); padding-bottom: .6rem;
+}
+.exp-tabla th, .exp-tabla td { text-align: left; padding: .5rem .9rem .5rem 0; }
+.exp-tabla thead th {
+  font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--grafito); border-bottom: 1px solid var(--tinta); font-weight: 600;
+}
+.exp-tabla tbody tr { border-bottom: 1px solid var(--pauta); }
+.exp-tabla tbody tr:last-child { border-bottom: 0; }
+.exp-tabla .mal { color: var(--grafito); }
+.exp-tabla .bien { color: var(--sello); font-weight: 600; }
+
+.exp-pie { border-top: 1px solid var(--pauta); margin-top: 1.4rem; padding-top: 1.1rem; }
+.exp-pie a {
+  font-size: .9rem; text-decoration: none;
+  border-bottom: 1px solid var(--sello); padding-bottom: 1px;
+}
+.exp-pie a:hover { color: var(--sello); }
+
+@media (max-width: 800px) {
+  .expediente { padding: 1.5rem 1.2rem 1.2rem; }
+  .exp-campos { grid-template-columns: 1fr; }
+  .exp-campos dd { border-top: 0; padding-top: 0; }
+  .exp-campos dt { padding-bottom: .5rem; }
+}
