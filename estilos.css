@@ -356,3 +356,51 @@ a { color: inherit; }
   .indice, .saltar { display: none; }
   .lamina { display: block; }
 }
+
+/* ---------- Cifras del índice ---------- */
+.cifras{ list-style:none; margin:0; padding:0; font-size:.82rem; color:var(--grafito); }
+.cifras li{ display:flex; align-items:baseline; gap:.55rem; padding:.28rem 0; border-bottom:1px solid var(--pauta); }
+.cifras li:last-child{ border-bottom:0; }
+.cifras span{
+  font-size:1.15rem; font-weight:600; color:var(--tinta);
+  min-width:2.1rem; text-align:right;
+}
+
+/* ---------- Herramientas publicadas ---------- */
+.tabla-herramientas{ list-style:none; margin:0; padding:0; border-top:1px solid var(--pauta); }
+.tabla-herramientas li{ border-bottom:1px solid var(--pauta); }
+.tabla-herramientas a{
+  display:grid; grid-template-columns:4fr 8fr; gap:.3rem 2rem;
+  padding:1rem 0; text-decoration:none;
+}
+.h-nom{
+  grid-column:1; grid-row:1 / span 2;
+  font-size:1.05rem; font-weight:500;
+  display:flex; flex-direction:column; gap:.35rem; align-items:flex-start;
+}
+.h-nom .ver{
+  font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--sello); border:1px solid var(--sello); padding:.12rem .4rem;
+}
+.h-desc{ grid-column:2; grid-row:1; font-size:.92rem; line-height:1.55; }
+.h-meta{
+  grid-column:2; grid-row:2;
+  font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--grafito);
+}
+.tabla-herramientas a:hover .h-nom{ color:var(--sello); }
+
+/* ---------- Sistemas propios ---------- */
+.privados{ margin:0; display:grid; grid-template-columns:1fr 2.4fr; gap:0; }
+.privados dt{
+  font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--grafito);
+  padding:.95rem 1rem .95rem 0; border-top:1px solid var(--pauta);
+}
+.privados dd{ margin:0; padding:.9rem 0; border-top:1px solid var(--pauta); font-size:.94rem; }
+
+@media (max-width: 800px){
+  .tabla-herramientas a{ grid-template-columns:1fr; }
+  .h-nom{ grid-column:1; grid-row:auto; flex-direction:row; align-items:center; gap:.6rem; }
+  .h-desc, .h-meta{ grid-column:1; grid-row:auto; }
+  .privados{ grid-template-columns:1fr; }
+  .privados dd{ border-top:0; padding-top:0; }
+}

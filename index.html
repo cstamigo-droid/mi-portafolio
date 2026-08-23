@@ -4,14 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cristian Amigo — Desarrollador Java backend</title>
-<meta name="description" content="Portafolio de Cristian Amigo, desarrollador Java backend. Proyectos con Spring Boot, JPA, Spring Security y API REST, cada uno con su enlace verificado.">
+<meta name="description" content="Portafolio de Cristian Amigo, desarrollador Java backend. Aplicaciones Spring Boot, servicios, paquetes publicados y herramientas, cada uno con su enlace verificado.">
 <link rel="canonical" href="https://cstamigo-droid.github.io/mi-portafolio/">
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Cristian Amigo — Desarrollador Java backend">
-<meta property="og:description" content="Ocho proyectos publicados. Cada uno con su enlace abierto y la fecha en que se comprobó que responde.">
+<meta property="og:description" content="Diecinueve repositorios y ocho servicios publicados. Cada uno con su enlace abierto y la fecha en que se comprobó que responde.">
 <meta property="og:url" content="https://cstamigo-droid.github.io/mi-portafolio/">
-<meta property="og:image" content="https://cstamigo-droid.github.io/mi-portafolio/og.png">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -37,13 +36,13 @@
     "https://github.com/cstamigo-droid",
     "https://www.linkedin.com/in/cristian-amigo"
   ],
-  "knowsAbout": ["Java", "Spring Boot", "Spring Data JPA", "Spring Security", "API REST", "SQL", "JUnit", "Git"]
+  "knowsAbout": ["Java","Spring Boot","Spring Data JPA","Spring Security","Java EE","Servlets","JSP","API REST","SQL","JUnit","Mockito","Git","Python","FastAPI","Docker"]
 }
 </script>
 </head>
 <body>
 
-<a class="saltar" href="#catalogo">Saltar al catálogo</a>
+<a class="saltar" href="#java">Saltar al catálogo</a>
 
 <header class="portada">
   <p class="ficha">Portafolio · Santiago de Chile · Actualizado 22-08-2026</p>
@@ -62,9 +61,12 @@
     <nav aria-label="Índice">
       <p class="rotulo">Índice</p>
       <ol>
-        <li><a href="#catalogo">Proyectos</a></li>
-        <li><a href="#paquetes">Paquetes publicados</a></li>
-        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#java">Aplicaciones Java</a></li>
+        <li><a href="#servicios">Servicios y APIs</a></li>
+        <li><a href="#frontend">Front-end y datos</a></li>
+        <li><a href="#publicado">Herramientas publicadas</a></li>
+        <li><a href="#propios">Sistemas propios</a></li>
+        <li><a href="#herramientas">Con qué trabajo</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ol>
     </nav>
@@ -78,15 +80,30 @@
       </p>
       <p class="letra-chica">
         Dos servicios se hospedan en planes gratuitos que suspenden la aplicación tras unos
-        minutos sin visitas. La primera carga puede tardar; la segunda, no.
+        minutos sin visitas. La primera carga puede tardar unos quince segundos; la segunda, no.
       </p>
+    </div>
+
+    <div class="nota-metodo">
+      <p class="rotulo">En números</p>
+      <ul class="cifras">
+        <li><span>19</span> repositorios públicos</li>
+        <li><span>8</span> servicios y páginas en línea</li>
+        <li><span>5</span> paquetes publicados en PyPI</li>
+        <li><span>25</span> enlaces verificados el 22-08-2026</li>
+      </ul>
     </div>
   </aside>
 
   <div class="cuerpo">
 
-    <section id="catalogo" aria-labelledby="t-catalogo">
-      <h2 id="t-catalogo" class="titulo-seccion"><span class="num">01</span> Proyectos</h2>
+    <!-- ===================== 01 · JAVA ===================== -->
+    <section id="java" aria-labelledby="t-java">
+      <h2 id="t-java" class="titulo-seccion"><span class="num">01</span> Aplicaciones Java</h2>
+      <p class="entrada-seccion">
+        El centro del portafolio. De un gestor por consola con pruebas unitarias hasta
+        aplicaciones web con persistencia, control de acceso por roles y API REST.
+      </p>
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
@@ -111,7 +128,85 @@
         </div>
         <div class="col-sello">
           <span class="sello">200<span>22-08-2026</span></span>
-          <span class="etiqueta">Proyecto del curso</span>
+          <span class="etiqueta">Spring Boot</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Biblioteca Digital UNTEC</h3>
+          <p class="pila">Java EE · Servlets · JSP · JDBC · DAO · MVC · Tomcat</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Aplicación web de préstamos de libros construida con Java EE puro, sin framework:
+            servlets como controladores, JSP como vistas, capa DAO sobre JDBC y sesión propia
+            para el control de acceso. Se empaqueta como WAR y se despliega en Tomcat.
+          </p>
+          <p class="detalle">
+            Es el proyecto donde entendí qué hace Spring por debajo. También donde aprendí a
+            revisar el bytecode del WAR antes de entregarlo: compilado con la versión de Java
+            equivocada, la aplicación devolvía error 500 en un servidor distinto del mío.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/cstamigo-droid/biblioteca-untec">Código y capturas →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">Java EE sin framework</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Radar de Datos · Guardián PYME</h3>
+          <p class="pila">Java · POO · interfaces · consola</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Agente de consola que revisa un equipo y diagnostica riesgos de datos antes de que
+            se pierdan: bases sin respaldo, datos personales expuestos, credenciales en texto
+            plano y disco lleno. Seis detectores distintos detrás de una misma interfaz.
+          </p>
+          <p class="detalle">
+            Sólo lee metadatos —nombres, tamaños, tipos— y nunca copia ni envía el contenido.
+            Esa restricción se decidió antes de escribir el primer detector, porque una
+            herramienta que revisa datos ajenos tiene que poder explicar qué no hace.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/cstamigo-droid/respaldo-pyme-agent">Código →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">Java puro</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>SmartTask</h3>
+          <p class="pila">Java · herencia · polimorfismo · JUnit 5 · Mockito</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Gestor de tareas por consola con jerarquía de clases —tareas normales y urgentes
+            que se comportan distinto tras la misma interfaz—, persistencia mediante DAO y
+            pruebas unitarias con informe de cobertura.
+          </p>
+          <p class="detalle">
+            El proyecto donde el polimorfismo dejó de ser un concepto de manual: agregar un
+            tipo nuevo de tarea no obligó a tocar el gestor, que era exactamente lo que la
+            teoría prometía y yo no había visto pasar.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/cstamigo-droid/smarttask">Código y pruebas →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">POO y pruebas</span>
         </div>
       </article>
 
@@ -129,7 +224,7 @@
           <p class="detalle">
             Es el proyecto donde más aprendí sobre lo que pasa después de programar:
             desplegar, migrar la base y darse cuenta de que la primera visita del día tarda
-            catorce segundos porque el servidor estaba dormido.
+            dieciséis segundos porque el servidor estaba dormido.
           </p>
           <p class="enlaces">
             <a href="https://colmillo-rentable.onrender.com">Aplicación en vivo →</a>
@@ -152,7 +247,7 @@
           <p>
             Treinta y una rutas REST sobre nueve entidades, con autorización por rol probada
             de punta a punta: un usuario común recibe <em>403</em> en las rutas de
-            administración y el administrador las lee.
+            administración y el administrador las lee. Veintidós pruebas en verde.
           </p>
           <p class="detalle">
             Es el único que usa a diario una persona que no soy yo, y eso cambió el trabajo:
@@ -169,6 +264,11 @@
           <span class="etiqueta">Con usuario real</span>
         </div>
       </article>
+    </section>
+
+    <!-- ===================== 02 · SERVICIOS ===================== -->
+    <section id="servicios" aria-labelledby="t-servicios">
+      <h2 id="t-servicios" class="titulo-seccion"><span class="num">02</span> Servicios y APIs</h2>
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
@@ -188,7 +288,8 @@
           </p>
           <p class="enlaces">
             <a href="https://cstamigo-droid.github.io/aegis-landing/">Presentación →</a>
-            <a href="https://aegis-idempotency-production.up.railway.app/docs">Documentación de la API →</a>
+            <a href="https://aegis-idempotency-production.up.railway.app/docs">Documentación viva de la API →</a>
+            <a href="https://github.com/cstamigo-droid/aegis-idempotency">Cliente →</a>
           </p>
         </div>
         <div class="col-sello">
@@ -223,16 +324,22 @@
           <span class="etiqueta">Sin servidor</span>
         </div>
       </article>
+    </section>
+
+    <!-- ===================== 03 · FRONT-END ===================== -->
+    <section id="frontend" aria-labelledby="t-frontend">
+      <h2 id="t-frontend" class="titulo-seccion"><span class="num">03</span> Front-end y datos</h2>
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
           <h3>Alke Wallet</h3>
-          <p class="pila">HTML · CSS · Bootstrap · JavaScript · SQL</p>
+          <p class="pila">HTML · CSS · Bootstrap · JavaScript · jQuery · SQL</p>
         </div>
         <div class="col-texto">
           <p>
             Interfaz de una billetera digital, adaptada a móvil, tablet y escritorio, con su
-            modelo de datos relacional en un repositorio aparte.
+            modelo de datos relacional documentado en un repositorio aparte: diagrama
+            entidad-relación, script de creación y consultas de ejemplo.
           </p>
           <p class="detalle">
             Fue lo primero que publiqué. Lo dejo tal como quedó: sirve para ver de dónde
@@ -240,6 +347,7 @@
           </p>
           <p class="enlaces">
             <a href="https://cstamigo-droid.github.io/alke-wallet/">Ver la interfaz →</a>
+            <a href="https://github.com/cstamigo-droid/alke-wallet">Código →</a>
             <a href="https://github.com/cstamigo-droid/alke-wallet-bd">Modelo de datos →</a>
           </p>
         </div>
@@ -248,33 +356,134 @@
           <span class="etiqueta">Primer proyecto</span>
         </div>
       </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Este portafolio</h3>
+          <p class="pila">HTML · CSS · sin framework · sin JavaScript</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            La página que está leyendo. Escrita a mano, sin plantilla ni framework de estilos,
+            con grilla propia, tipografía elegida, datos estructurados y hoja de impresión.
+            El contenido existe con las hojas de estilo desactivadas.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/cstamigo-droid/mi-portafolio">Código →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">33 KB en total</span>
+        </div>
+      </article>
     </section>
 
-    <section id="paquetes" aria-labelledby="t-paquetes">
-      <h2 id="t-paquetes" class="titulo-seccion"><span class="num">02</span> Paquetes publicados</h2>
+    <!-- ===================== 04 · PUBLICADO ===================== -->
+    <section id="publicado" aria-labelledby="t-publicado">
+      <h2 id="t-publicado" class="titulo-seccion"><span class="num">04</span> Herramientas publicadas</h2>
       <p class="entrada-seccion">
-        Cinco paquetes en el índice público de Python. Cualquiera puede instalarlos con
-        <code>pip install</code>, lo que obliga a algo que un repositorio no obliga: que el
-        empaquetado, las dependencias y la versión estén bien.
+        Cinco paquetes están en el índice público de Python: cualquiera los instala con
+        <code>pip install</code>, lo que obliga a algo que un repositorio no obliga —que el
+        empaquetado, las dependencias y la versión estén bien—.
       </p>
-      <ul class="tabla-paquetes">
-        <li><a href="https://pypi.org/project/market-data-mcp/"><span class="pk">market-data-mcp</span><span class="ver">1.0.0</span></a></li>
-        <li><a href="https://pypi.org/project/aegis-idempotency/"><span class="pk">aegis-idempotency</span><span class="ver">0.1.2</span></a></li>
-        <li><a href="https://pypi.org/project/equity-intel-mcp/"><span class="pk">equity-intel-mcp</span><span class="ver">0.1.0</span></a></li>
-        <li><a href="https://pypi.org/project/crypto-intel-mcp/"><span class="pk">crypto-intel-mcp</span><span class="ver">0.1.0</span></a></li>
-        <li><a href="https://pypi.org/project/signal-scanner/"><span class="pk">signal-scanner</span><span class="ver">0.1.0</span></a></li>
+
+      <ul class="tabla-herramientas">
+        <li>
+          <a href="https://github.com/cstamigo-droid/argos-watchdog">
+            <span class="h-nom">argos-watchdog</span>
+            <span class="h-desc">Detecta sistemas que están "arriba" pero dejaron de hacer su trabajo. Llena el hueco entre <em>el proceso respondió</em> y <em>el proceso cumplió su propósito</em>.</span>
+            <span class="h-meta">Python · YAML · sólo lectura</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/cstamigo-droid/rag-starter">
+            <span class="h-nom">rag-starter</span>
+            <span class="h-desc">Convierte una carpeta de documentos en un servicio de preguntas y respuestas <strong>con citas</strong>: cada afirmación es rastreable al pasaje del que salió. Funciona sin clave de API y sin conexión.</span>
+            <span class="h-meta">Python · FastAPI · ChromaDB · MCP</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/project/signal-scanner/">
+            <span class="h-nom">signal-scanner<span class="ver">PyPI 0.1.0</span></span>
+            <span class="h-desc">Filtra listas de instrumentos según reglas escritas en YAML, sin tocar código. Los indicadores se calculan sobre datos cerrados, y un símbolo sin datos se reporta como tal en vez de inventarse.</span>
+            <span class="h-meta">Python · reglas declarativas</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/project/market-data-mcp/">
+            <span class="h-nom">market-data-mcp<span class="ver">PyPI 1.0.0</span></span>
+            <span class="h-desc">Servidor bajo el estándar MCP que entrega datos de mercado en vivo a cualquier modelo de lenguaje.</span>
+            <span class="h-meta">Python · MCP</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/project/equity-intel-mcp/">
+            <span class="h-nom">equity-intel-mcp<span class="ver">PyPI 0.1.0</span></span>
+            <span class="h-desc">Servidor MCP de análisis de acciones: información societaria, valuación y presentaciones ante el regulador.</span>
+            <span class="h-meta">Python · MCP</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/project/crypto-intel-mcp/">
+            <span class="h-nom">crypto-intel-mcp<span class="ver">PyPI 0.1.0</span></span>
+            <span class="h-desc">Servidor MCP equivalente para el mercado de criptomonedas, con precios y métricas de varias fuentes.</span>
+            <span class="h-meta">Python · MCP</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/project/aegis-idempotency/">
+            <span class="h-nom">aegis-idempotency<span class="ver">PyPI 0.1.2</span></span>
+            <span class="h-desc">Cliente asíncrono del servicio AEGIS, para pedir aprobación humana desde código con garantía de ejecución única.</span>
+            <span class="h-meta">Python · asyncio</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/cstamigo-droid/plan-200">
+            <span class="h-nom">Plan 200 · documentación de arquitectura</span>
+            <span class="h-desc">Sistema autónomo que coordina dos plataformas distintas bajo una sola configuración y una sola autoridad de riesgo. Se publica <strong>la arquitectura y las decisiones de ingeniería</strong>, no la implementación ni ninguna cifra.</span>
+            <span class="h-meta">Documentación técnica · código privado</span>
+          </a>
+        </li>
       </ul>
     </section>
 
+    <!-- ===================== 05 · PROPIOS ===================== -->
+    <section id="propios" aria-labelledby="t-propios">
+      <h2 id="t-propios" class="titulo-seccion"><span class="num">05</span> Sistemas propios</h2>
+      <p class="entrada-seccion">
+        Además de lo anterior mantengo un conjunto de sistemas en repositorios privados, casi
+        todos en Python. No los puedo enlazar, pero son donde practico arquitectura, tareas
+        programadas, integración entre servicios y tolerancia a fallos. Los menciono porque
+        explican de dónde salen varias de las decisiones que sí se pueden ver arriba.
+      </p>
+      <dl class="privados">
+        <dt>Orquestación y datos</dt>
+        <dd>Plataforma central que coordina alrededor de noventa tareas programadas, con registro durable de eventos, verificación de efecto por componente y panel web de estado.</dd>
+
+        <dt>Servicios de análisis</dt>
+        <dd>Varios servicios FastAPI que ingieren datos de fuentes distintas, los normalizan y los publican a través de una API interna para que el resto del sistema no dependa del formato de origen.</dd>
+
+        <dt>Asistentes y automatización</dt>
+        <dd>Fábrica de servidores MCP, agente de búsqueda de empleo, generador de contenido y un sistema de gestión de conocimiento con recuperación por citas.</dd>
+
+        <dt>Plataforma de postventa</dt>
+        <dd>Modelo de dominio en Java con herencia, polimorfismo y pruebas unitarias, pensado como base de un servicio de postventa para pequeñas empresas.</dd>
+      </dl>
+    </section>
+
+    <!-- ===================== 06 · HERRAMIENTAS ===================== -->
     <section id="herramientas" aria-labelledby="t-herramientas">
-      <h2 id="t-herramientas" class="titulo-seccion"><span class="num">03</span> Herramientas</h2>
+      <h2 id="t-herramientas" class="titulo-seccion"><span class="num">06</span> Con qué trabajo</h2>
       <dl class="pila-tecnica">
         <dt>Lenguaje y framework</dt>
         <dd>Java&nbsp;21 · Spring Boot · Spring MVC · Spring Data JPA · Spring Security · Thymeleaf · Maven</dd>
+        <dt>Java EE</dt>
+        <dd>Servlets · JSP · JSTL · JDBC · patrón DAO · Tomcat · empaquetado WAR</dd>
         <dt>Datos</dt>
-        <dd>PostgreSQL · MySQL · H2 · SQLite · modelado relacional y SQL</dd>
+        <dd>PostgreSQL · MySQL · MariaDB · H2 · SQLite · modelado relacional y SQL</dd>
         <dt>Pruebas</dt>
-        <dd>JUnit&nbsp;5 · Mockito · pruebas de flujo sobre la aplicación corriendo</dd>
+        <dd>JUnit&nbsp;5 · Mockito · cobertura · pruebas de flujo sobre la aplicación corriendo</dd>
         <dt>Front-end</dt>
         <dd>HTML · CSS · JavaScript · Bootstrap · jQuery</dd>
         <dt>También trabajo con</dt>
@@ -282,8 +491,9 @@
       </dl>
     </section>
 
+    <!-- ===================== 07 · CONTACTO ===================== -->
     <section id="contacto" aria-labelledby="t-contacto">
-      <h2 id="t-contacto" class="titulo-seccion"><span class="num">04</span> Contacto</h2>
+      <h2 id="t-contacto" class="titulo-seccion"><span class="num">07</span> Contacto</h2>
       <p class="entrada-seccion">
         Busco mi primer puesto como desarrollador Java backend, en Santiago o remoto.
       </p>
