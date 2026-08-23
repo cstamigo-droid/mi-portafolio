@@ -1,0 +1,28 @@
+# Cristian Amigo
+
+> Desarrollador Java backend en Santiago de Chile. Portafolio de proyectos publicados,
+> cada uno con su direccion abierta y verificada.
+
+Busca su primer puesto como desarrollador Java backend, presencial en Santiago o remoto.
+Viene de cerca de diez anos en soporte e infraestructura de TI.
+
+## Herramientas
+Java 21, Spring Boot, Spring MVC, Spring Data JPA, Spring Security, Thymeleaf, Maven,
+PostgreSQL, MySQL, H2, SQLite, JUnit 5, Mockito, HTML, CSS, JavaScript, Bootstrap,
+Python, FastAPI, Docker, Git.
+
+## Proyectos
+- SpringEduManager: https://github.com/cstamigo-droid/springedumanager
+- Colmillo (plataforma de cursos): https://colmillo-rentable.onrender.com
+- Panel de gestion: https://panel-cartera.onrender.com
+- AEGIS (API): https://cstamigo-droid.github.io/aegis-landing/
+- Hermes (analisis en el navegador): https://hermes-forensic.vercel.app
+- Alke Wallet: https://cstamigo-droid.github.io/alke-wallet/
+
+## Paquetes publicados en PyPI
+market-data-mcp, aegis-idempotency, equity-intel-mcp, crypto-intel-mcp, signal-scanner
+
+## Contacto
+Correo: cstamigo@gmail.com
+GitHub: https://github.com/cstamigo-droid
+LinkedIn: https://www.linkedin.com/in/cristian-amigo

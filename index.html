@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cristian Amigo — Desarrollador Java backend</title>
+<meta name="description" content="Portafolio de Cristian Amigo, desarrollador Java backend. Proyectos con Spring Boot, JPA, Spring Security y API REST, cada uno con su enlace verificado.">
+<link rel="canonical" href="https://cstamigo-droid.github.io/mi-portafolio/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Cristian Amigo — Desarrollador Java backend">
+<meta property="og:description" content="Ocho proyectos publicados. Cada uno con su enlace abierto y la fecha en que se comprobó que responde.">
+<meta property="og:url" content="https://cstamigo-droid.github.io/mi-portafolio/">
+<meta property="og:image" content="https://cstamigo-droid.github.io/mi-portafolio/og.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F4F1EA'/><text y='24' x='4' font-family='Georgia,serif' font-size='22' fill='%231A1714'>C</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="estilos.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Cristian Amigo Martínez",
+  "givenName": "Cristian",
+  "familyName": "Amigo Martínez",
+  "jobTitle": "Desarrollador Java backend",
+  "email": "mailto:cstamigo@gmail.com",
+  "url": "https://cstamigo-droid.github.io/mi-portafolio/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" },
+  "sameAs": [
+    "https://github.com/cstamigo-droid",
+    "https://www.linkedin.com/in/cristian-amigo"
+  ],
+  "knowsAbout": ["Java", "Spring Boot", "Spring Data JPA", "Spring Security", "API REST", "SQL", "JUnit", "Git"]
+}
+</script>
+</head>
+<body>
+
+<a class="saltar" href="#catalogo">Saltar al catálogo</a>
+
+<header class="portada">
+  <p class="ficha">Portafolio · Santiago de Chile · Actualizado 22-08-2026</p>
+  <h1 class="nombre" aria-label="Cristian Amigo">Cristian&nbsp;Amigo</h1>
+  <p class="oficio">Desarrollador <em>Java backend</em></p>
+  <p class="bajada">
+    Vengo del soporte y la infraestructura de&nbsp;TI. Hoy construyo la parte que no se ve:
+    cómo se guardan los datos, cómo se protege el acceso y cómo dos sistemas se ponen de
+    acuerdo para hablar entre ellos.
+  </p>
+</header>
+
+<main class="lamina">
+
+  <aside class="indice">
+    <nav aria-label="Índice">
+      <p class="rotulo">Índice</p>
+      <ol>
+        <li><a href="#catalogo">Proyectos</a></li>
+        <li><a href="#paquetes">Paquetes publicados</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ol>
+    </nav>
+
+    <div class="nota-metodo">
+      <p class="rotulo">Sobre las mediciones</p>
+      <p>
+        Cada ficha trae el código de estado que devolvió su dirección y el día en que se
+        comprobó. No es decoración: es la diferencia entre decir que algo está publicado y
+        haberlo abierto.
+      </p>
+      <p class="letra-chica">
+        Dos servicios se hospedan en planes gratuitos que suspenden la aplicación tras unos
+        minutos sin visitas. La primera carga puede tardar; la segunda, no.
+      </p>
+    </div>
+  </aside>
+
+  <div class="cuerpo">
+
+    <section id="catalogo" aria-labelledby="t-catalogo">
+      <h2 id="t-catalogo" class="titulo-seccion"><span class="num">01</span> Proyectos</h2>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>SpringEduManager</h3>
+          <p class="pila">Java 21 · Spring Boot · MVC · Data JPA · Security · REST</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Aplicación web para gestionar estudiantes, cursos y evaluaciones. Separa
+            controlador, servicio y repositorio; distingue dos roles con permisos distintos y
+            expone una API REST para integrarse con otros sistemas.
+          </p>
+          <p class="detalle">
+            Al cerrarlo encontré que la API redirigía al formulario de login en vez de
+            responder <em>401</em>: un programa que la consumiera no podía distinguir un
+            rechazo de una respuesta válida. Corregido y verificado con 35 comprobaciones
+            sobre la aplicación corriendo.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/cstamigo-droid/springedumanager">Código y documentación →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">Proyecto del curso</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Colmillo</h3>
+          <p class="pila">Spring Boot · PostgreSQL · Thymeleaf · BCrypt</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Plataforma de cursos en línea, desplegada y en uso. Dieciséis unidades, sesenta y
+            ocho lecciones y doscientas noventa y una tarjetas de estudio, con registro de
+            avance por persona detrás de autenticación.
+          </p>
+          <p class="detalle">
+            Es el proyecto donde más aprendí sobre lo que pasa después de programar:
+            desplegar, migrar la base y darse cuenta de que la primera visita del día tarda
+            catorce segundos porque el servidor estaba dormido.
+          </p>
+          <p class="enlaces">
+            <a href="https://colmillo-rentable.onrender.com">Aplicación en vivo →</a>
+            <a href="https://cstamigo-droid.github.io/colmillo-rentable/">Presentación →</a>
+            <a href="https://github.com/cstamigo-droid/colmillo-app">Código →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">En producción</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Panel de gestión</h3>
+          <p class="pila">Spring Boot · PostgreSQL · Security · Bean Validation</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Treinta y una rutas REST sobre nueve entidades, con autorización por rol probada
+            de punta a punta: un usuario común recibe <em>403</em> en las rutas de
+            administración y el administrador las lee.
+          </p>
+          <p class="detalle">
+            Es el único que usa a diario una persona que no soy yo, y eso cambió el trabajo:
+            los errores que importan no son los que rompen la aplicación, sino los mensajes
+            que no se entienden.
+          </p>
+          <p class="enlaces">
+            <a href="https://panel-cartera.onrender.com">Aplicación en vivo →</a>
+            <span class="privado">Código privado</span>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">Con usuario real</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>AEGIS</h3>
+          <p class="pila">Python · FastAPI · PostgreSQL · Docker</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Servicio que intercala una aprobación humana antes de que un proceso automático
+            ejecute una acción sensible. Doce rutas documentadas y un control de duplicados
+            para que reintentar una petición no la ejecute dos veces.
+          </p>
+          <p class="detalle">
+            La idea salió de un problema concreto: si el cliente reintenta porque se cortó la
+            red, el servidor no puede saber si es una acción nueva o la misma de antes. La
+            respuesta fue que el cliente nombre cada operación.
+          </p>
+          <p class="enlaces">
+            <a href="https://cstamigo-droid.github.io/aegis-landing/">Presentación →</a>
+            <a href="https://aegis-idempotency-production.up.railway.app/docs">Documentación de la API →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">API publicada</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Hermes</h3>
+          <p class="pila">JavaScript · Procesamiento en el navegador</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Herramienta de análisis que procesa archivos <em>enteramente en el navegador</em>:
+            se arrastra un archivo, se calcula en el equipo del usuario y no se envía un solo
+            byte al servidor.
+          </p>
+          <p class="detalle">
+            Decidir que nada saliera del navegador obligó a reescribir el motor de cálculo,
+            pero eliminó de raíz la pregunta más incómoda que puede hacer un usuario: qué
+            hacen ustedes con mis datos.
+          </p>
+          <p class="enlaces">
+            <a href="https://hermes-forensic.vercel.app">Aplicación en vivo →</a>
+            <span class="privado">Código privado</span>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">Sin servidor</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Alke Wallet</h3>
+          <p class="pila">HTML · CSS · Bootstrap · JavaScript · SQL</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Interfaz de una billetera digital, adaptada a móvil, tablet y escritorio, con su
+            modelo de datos relacional en un repositorio aparte.
+          </p>
+          <p class="detalle">
+            Fue lo primero que publiqué. Lo dejo tal como quedó: sirve para ver de dónde
+            salí, y porque un portafolio que sólo muestra lo último no muestra el recorrido.
+          </p>
+          <p class="enlaces">
+            <a href="https://cstamigo-droid.github.io/alke-wallet/">Ver la interfaz →</a>
+            <a href="https://github.com/cstamigo-droid/alke-wallet-bd">Modelo de datos →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">200<span>22-08-2026</span></span>
+          <span class="etiqueta">Primer proyecto</span>
+        </div>
+      </article>
+    </section>
+
+    <section id="paquetes" aria-labelledby="t-paquetes">
+      <h2 id="t-paquetes" class="titulo-seccion"><span class="num">02</span> Paquetes publicados</h2>
+      <p class="entrada-seccion">
+        Cinco paquetes en el índice público de Python. Cualquiera puede instalarlos con
+        <code>pip install</code>, lo que obliga a algo que un repositorio no obliga: que el
+        empaquetado, las dependencias y la versión estén bien.
+      </p>
+      <ul class="tabla-paquetes">
+        <li><a href="https://pypi.org/project/market-data-mcp/"><span class="pk">market-data-mcp</span><span class="ver">1.0.0</span></a></li>
+        <li><a href="https://pypi.org/project/aegis-idempotency/"><span class="pk">aegis-idempotency</span><span class="ver">0.1.2</span></a></li>
+        <li><a href="https://pypi.org/project/equity-intel-mcp/"><span class="pk">equity-intel-mcp</span><span class="ver">0.1.0</span></a></li>
+        <li><a href="https://pypi.org/project/crypto-intel-mcp/"><span class="pk">crypto-intel-mcp</span><span class="ver">0.1.0</span></a></li>
+        <li><a href="https://pypi.org/project/signal-scanner/"><span class="pk">signal-scanner</span><span class="ver">0.1.0</span></a></li>
+      </ul>
+    </section>
+
+    <section id="herramientas" aria-labelledby="t-herramientas">
+      <h2 id="t-herramientas" class="titulo-seccion"><span class="num">03</span> Herramientas</h2>
+      <dl class="pila-tecnica">
+        <dt>Lenguaje y framework</dt>
+        <dd>Java&nbsp;21 · Spring Boot · Spring MVC · Spring Data JPA · Spring Security · Thymeleaf · Maven</dd>
+        <dt>Datos</dt>
+        <dd>PostgreSQL · MySQL · H2 · SQLite · modelado relacional y SQL</dd>
+        <dt>Pruebas</dt>
+        <dd>JUnit&nbsp;5 · Mockito · pruebas de flujo sobre la aplicación corriendo</dd>
+        <dt>Front-end</dt>
+        <dd>HTML · CSS · JavaScript · Bootstrap · jQuery</dd>
+        <dt>También trabajo con</dt>
+        <dd>Python · FastAPI · Docker · Git y GitHub · Linux</dd>
+      </dl>
+    </section>
+
+    <section id="contacto" aria-labelledby="t-contacto">
+      <h2 id="t-contacto" class="titulo-seccion"><span class="num">04</span> Contacto</h2>
+      <p class="entrada-seccion">
+        Busco mi primer puesto como desarrollador Java backend, en Santiago o remoto.
+      </p>
+      <ul class="contacto">
+        <li><span class="rotulo">Correo</span><a href="mailto:cstamigo@gmail.com">cstamigo@gmail.com</a></li>
+        <li><span class="rotulo">GitHub</span><a href="https://github.com/cstamigo-droid">github.com/cstamigo-droid</a></li>
+        <li><span class="rotulo">LinkedIn</span><a href="https://www.linkedin.com/in/cristian-amigo">linkedin.com/in/cristian-amigo</a></li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer class="pie">
+  <p>Escrito a mano en HTML y CSS, sin plantillas ni framework de estilos.</p>
+  <p class="letra-chica">Cristian Amigo Martínez · Santiago de Chile · 2026</p>
+</footer>
+
+</body>
+</html>

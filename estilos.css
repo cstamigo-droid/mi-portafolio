@@ -1,0 +1,358 @@
+/* =========================================================================
+   Portafolio — Cristian Amigo
+   Linaje: catálogo técnico / ficha de especificación.
+   Paleta muestreada de un cuaderno técnico: papel cálido, tinta ferrogálica,
+   línea de pauta tenue y un único rojo de sello de goma.
+   ========================================================================= */
+
+:root {
+  --papel:        #F4F1EA;
+  --papel-hondo:  #ECE7DC;
+  --tinta:        #1A1714;
+  --grafito:      #5C554C;
+  --pauta:        #DDD6C8;
+  --sello:        #B3311F;
+
+  --display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --texto:   "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --medida: 66ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 17px;
+  line-height: 1.62;
+  font-variant-numeric: tabular-nums;
+  /* la pauta del cuaderno: líneas horizontales muy tenues */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 31px,
+    color-mix(in srgb, var(--pauta) 55%, transparent) 31px 32px
+  );
+}
+
+a { color: inherit; }
+
+.saltar {
+  position: absolute; left: -9999px;
+  background: var(--tinta); color: var(--papel);
+  padding: .7rem 1.1rem; z-index: 10; text-decoration: none;
+}
+.saltar:focus { left: 1rem; top: 1rem; }
+
+:focus-visible { outline: 2px solid var(--sello); outline-offset: 3px; }
+
+/* ---------- Portada: el nombre desborda y se corta en el borde ---------- */
+
+.portada {
+  padding: 4.5rem 0 3rem 6vw;
+  border-bottom: 1px solid var(--pauta);
+  overflow: hidden;              /* la tensión: el nombre se corta */
+}
+
+.ficha {
+  margin: 0 0 2.5rem;
+  font-size: .74rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--grafito);
+}
+
+.nombre {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(4.2rem, 15.5vw, 12.5rem);   /* ~4,5× el cuerpo y más */
+  line-height: .82;
+  letter-spacing: -.025em;
+  margin: 0;
+  white-space: nowrap;                          /* se sale por la derecha */
+}
+
+.oficio {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1.1;
+  margin: 1.6rem 0 0;
+  color: var(--grafito);
+}
+.oficio em { font-style: italic; color: var(--tinta); }
+
+.bajada {
+  max-width: 46ch;
+  margin: 1.8rem 6vw 0 0;
+  color: var(--grafito);
+}
+
+/* ---------- Lámina: grilla asimétrica 4/8 ---------- */
+
+.lamina {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 0;
+  align-items: start;
+}
+
+.indice {
+  position: sticky;
+  top: 0;
+  padding: 2.2rem 2rem 3rem 6vw;   /* apretado arriba: la columna izquierda no respira */
+  border-right: 1px solid var(--pauta);
+  align-self: start;
+}
+
+.rotulo {
+  font-size: .68rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--grafito);
+  margin: 0 0 .8rem;
+}
+
+.indice ol {
+  list-style: none;
+  margin: 0 0 3.2rem;
+  padding: 0;
+  counter-reset: idx;
+}
+.indice li { counter-increment: idx; border-bottom: 1px solid var(--pauta); }
+.indice li a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .55rem 0;
+  text-decoration: none;
+  font-size: .95rem;
+}
+.indice li a::after {
+  content: "0" counter(idx);
+  color: var(--grafito);
+  font-size: .78rem;
+  letter-spacing: .08em;
+}
+.indice li a:hover { color: var(--sello); }
+
+.nota-metodo p:not(.rotulo) {
+  font-size: .87rem;
+  line-height: 1.55;
+  color: var(--grafito);
+  margin: 0 0 .9rem;
+  max-width: 34ch;
+}
+.letra-chica { font-size: .78rem !important; opacity: .82; }
+
+/* ---------- Cuerpo: ritmo vertical deliberadamente desparejo ---------- */
+
+.cuerpo { min-width: 0; }
+
+.cuerpo > section { padding: 5.5rem 6vw 2rem 3.5rem; }
+#paquetes    { padding-top: 2.5rem; padding-bottom: 1rem; }   /* apretada */
+#herramientas{ padding-top: 6.5rem; }                         /* respira */
+#contacto    { padding-top: 4rem; padding-bottom: 5rem; }
+
+.titulo-seccion {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1;
+  margin: 0 0 2.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  border-bottom: 1px solid var(--tinta);
+  padding-bottom: .8rem;
+}
+.titulo-seccion .num {
+  font-family: var(--texto);
+  font-size: .72rem;
+  letter-spacing: .16em;
+  color: var(--sello);
+}
+
+.entrada-seccion { max-width: var(--medida); color: var(--grafito); margin: 0 0 2rem; }
+.entrada-seccion code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: .88em;
+  background: var(--papel-hondo);
+  padding: .1em .35em;
+}
+
+/* ---------- Ficha de proyecto: filas 3/6/3 ---------- */
+
+.ficha-proyecto {
+  display: grid;
+  grid-template-columns: 3fr 6fr 3fr;
+  gap: 2rem;
+  padding: 2.4rem 0;
+  border-bottom: 1px solid var(--pauta);
+}
+.ficha-proyecto:first-of-type { padding-top: .5rem; }
+
+.col-nombre h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.85rem;
+  line-height: 1.05;
+  margin: 0 0 .6rem;
+}
+.pila {
+  margin: 0;
+  font-size: .76rem;
+  line-height: 1.5;
+  letter-spacing: .04em;
+  color: var(--grafito);
+  text-transform: uppercase;
+}
+
+.col-texto p { margin: 0 0 .9rem; max-width: 58ch; }
+.col-texto .detalle {
+  font-size: .9rem;
+  color: var(--grafito);
+  border-left: 2px solid var(--pauta);
+  padding-left: 1rem;
+}
+.col-texto em { font-style: italic; }
+
+.enlaces { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.1rem !important; }
+.enlaces a {
+  font-size: .88rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--sello);
+  padding-bottom: 1px;
+  transition: color .15s ease;
+}
+.enlaces a:hover { color: var(--sello); }
+.privado {
+  font-size: .88rem;
+  color: var(--grafito);
+  border-bottom: 1px dotted var(--pauta);
+  padding-bottom: 1px;
+}
+
+/* El gesto de autor: el sello de medición, rotado como sello de goma */
+.col-sello { display: flex; flex-direction: column; align-items: flex-start; gap: .9rem; }
+
+.sello {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  transform: rotate(-1.5deg);
+  border: 2px solid var(--sello);
+  color: var(--sello);
+  padding: .45rem .85rem .35rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+.sello span {
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  opacity: .9;
+}
+.etiqueta {
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--grafito);
+}
+
+/* ---------- Paquetes ---------- */
+
+.tabla-paquetes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--pauta); }
+.tabla-paquetes li { border-bottom: 1px solid var(--pauta); }
+.tabla-paquetes a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: .75rem 0;
+  text-decoration: none;
+}
+.tabla-paquetes a:hover .pk { color: var(--sello); }
+.pk { font-size: 1rem; }
+.ver { font-size: .8rem; color: var(--grafito); letter-spacing: .06em; }
+
+/* ---------- Pila técnica ---------- */
+
+.pila-tecnica { margin: 0; display: grid; grid-template-columns: 1fr 2.4fr; gap: 0; }
+.pila-tecnica dt {
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--grafito);
+  padding: .95rem 1rem .95rem 0;
+  border-top: 1px solid var(--pauta);
+}
+.pila-tecnica dd {
+  margin: 0;
+  padding: .9rem 0;
+  border-top: 1px solid var(--pauta);
+}
+
+/* ---------- Contacto ---------- */
+
+.contacto { list-style: none; margin: 0; padding: 0; }
+.contacto li {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
+  border-top: 1px solid var(--pauta);
+  padding: .85rem 0;
+}
+.contacto .rotulo { margin: 0; }
+.contacto a { text-decoration: none; border-bottom: 1px solid var(--sello); justify-self: start; }
+.contacto a:hover { color: var(--sello); }
+
+/* ---------- Pie ---------- */
+
+.pie {
+  border-top: 1px solid var(--tinta);
+  padding: 2.2rem 6vw 3.5rem;
+  color: var(--grafito);
+}
+.pie p { margin: 0 0 .4rem; font-size: .84rem; }
+
+/* ---------- Adaptación ---------- */
+
+@media (max-width: 1080px) {
+  .ficha-proyecto { grid-template-columns: 4fr 8fr; }
+  .col-sello { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 1.2rem; }
+}
+
+@media (max-width: 800px) {
+  body { font-size: 16px; }
+  .lamina { grid-template-columns: 1fr; }
+  .indice {
+    position: static;
+    border-right: 0;
+    border-bottom: 1px solid var(--pauta);
+    padding: 2rem 6vw 2.5rem;
+  }
+  .nota-metodo p:not(.rotulo) { max-width: none; }
+  .cuerpo > section { padding-left: 6vw; padding-right: 6vw; padding-top: 3.5rem; }
+  #herramientas { padding-top: 4rem; }
+  .nombre { white-space: normal; }        /* en móvil el corte estorbaría de verdad */
+  .ficha-proyecto { grid-template-columns: 1fr; gap: 1.2rem; }
+  .pila-tecnica, .contacto li { grid-template-columns: 1fr; }
+  .pila-tecnica dd { border-top: 0; padding-top: 0; }
+  .contacto li { gap: .2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+@media print {
+  body { background: #fff; }
+  .indice, .saltar { display: none; }
+  .lamina { display: block; }
+}
