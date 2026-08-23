@@ -25,4 +25,4 @@ market-data-mcp, aegis-idempotency, equity-intel-mcp, crypto-intel-mcp, signal-s
 ## Contacto
 Correo: cstamigo@gmail.com
 GitHub: https://github.com/cstamigo-droid
-LinkedIn: https://www.linkedin.com/in/cristian-amigo
+LinkedIn: https://www.linkedin.com/in/cristian-amigo-3a726a362
