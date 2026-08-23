@@ -69,7 +69,7 @@ a { color: inherit; }
 .nombre {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(4.2rem, 15.5vw, 12.5rem);   /* ~4,5× el cuerpo y más */
+  font-size: clamp(4.2rem, 19vw, 22rem);       /* corre hasta salirse por la derecha */
   line-height: .82;
   letter-spacing: -.025em;
   margin: 0;
