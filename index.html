@@ -9,7 +9,7 @@
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Cristian Amigo — Desarrollador Java backend">
-<meta property="og:description" content="11 proyectos publicados, cada uno con su enlace abierto. Cada uno con su enlace abierto y la fecha en que se comprobó que responde.">
+<meta property="og:description" content="11 proyectos publicados, con su enlace abierto o su motivo para no tenerlo. Cada uno con su enlace abierto y la fecha en que se comprobó que responde.">
 <meta property="og:url" content="https://cstamigo-droid.github.io/mi-portafolio/">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
@@ -45,7 +45,7 @@
 <a class="saltar" href="#java">Saltar al catálogo</a>
 
 <header class="portada">
-  <p class="ficha">Portafolio · Santiago de Chile · Actualizado 22-08-2026</p>
+  <p class="ficha">Portafolio · Santiago de Chile · Actualizado 23-08-2026</p>
   <h1 class="nombre" aria-label="Cristian Amigo">Cristian&nbsp;Amigo</h1>
   <p class="oficio">Desarrollador <em>Java backend</em></p>
   <p class="bajada">
@@ -91,7 +91,7 @@
         <li><span>11</span> proyectos con ficha propia</li>
         <li><span>13</span> repositorios de código abiertos</li>
         <li><span>5</span> paquetes publicados en PyPI</li>
-        <li><span>28</span> enlaces verificados el 22-08-2026</li>
+        <li><span>27</span> enlaces verificados el 23-08-2026</li>
       </ul>
     </div>
   </aside>
@@ -132,7 +132,6 @@
           <span class="etiqueta">Spring Boot</span>
         </div>
       </article>
-
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
@@ -251,6 +250,41 @@
         </div>
       </article>
 
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>IRIS</h3>
+          <p class="pila">Python · IMAP · API de Telegram · Google Calendar · RAG · tareas programadas</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Asistente omnicanal que corre solo: clasifica y archiva correo, arma un resumen diario,
+            responde por Telegram citando la documentación del servicio, registra oportunidades
+            comerciales y agenda reuniones en el calendario. Cuatro tareas programadas lo mantienen
+            vivo sin que nadie abra una sesión.
+          </p>
+          <p class="detalle">
+            Es el sistema con más pruebas que escribí: <strong>213</strong>, sobre integraciones que
+            fallan de verdad —una casilla que no responde, una API que corta, un archivo a medio
+            escribir—. Varias existen para fijar lo que el sistema <em>no</em> debe hacer: hay una
+            que impide que el clasificador reciba el cuerpo del correo.
+          </p>
+          <p class="detalle">
+            Al revisarlo para este portafolio encontré que <strong>cuatro pruebas habían dejado de
+            pasar sin que nadie tocara el código</strong>: fijaban fechas de julio contra una ventana
+            móvil de catorce días, y se pudrieron solas al llegar agosto. No era un fallo del
+            producto, era el reloj. Corregidas.
+          </p>
+          <p class="enlaces">
+            <span class="privado">Código privado — lee correo personal</span>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">213<span>PRUEBAS</span></span>
+          <span class="etiqueta">En producción</span>
+        </div>
+      </article>
+
       <article class="ficha-proyecto">
         <div class="col-nombre">
           <h3>Colmillo</h3>
@@ -306,7 +340,6 @@
         </div>
       </article>
     </section>
-
 
     <!-- ===================== 02 · CASO DE ESTUDIO ===================== -->
     <section id="caso" aria-labelledby="t-caso">
@@ -490,32 +523,6 @@
         </div>
       </article>
 
-      <article class="ficha-proyecto">
-        <div class="col-nombre">
-          <h3>Hermes</h3>
-          <p class="pila">JavaScript · Procesamiento en el navegador</p>
-        </div>
-        <div class="col-texto">
-          <p>
-            Herramienta de análisis que procesa archivos <em>enteramente en el navegador</em>:
-            se arrastra un archivo, se calcula en el equipo del usuario y no se envía un solo
-            byte al servidor.
-          </p>
-          <p class="detalle">
-            Decidir que nada saliera del navegador obligó a reescribir el motor de cálculo,
-            pero eliminó de raíz la pregunta más incómoda que puede hacer un usuario: qué
-            hacen ustedes con mis datos.
-          </p>
-          <p class="enlaces">
-            <a href="https://hermes-forensic.vercel.app">Aplicación en vivo →</a>
-            <span class="privado">Código privado</span>
-          </p>
-        </div>
-        <div class="col-sello">
-          <span class="sello">200<span>22-08-2026</span></span>
-          <span class="etiqueta">Sin servidor</span>
-        </div>
-      </article>
     </section>
 
     <!-- ===================== 03 · FRONT-END ===================== -->
