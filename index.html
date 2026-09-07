@@ -109,7 +109,7 @@
       <article class="ficha-proyecto">
         <div class="col-nombre">
           <h3>SpringEduManager</h3>
-          <p class="pila">Java 21 · Spring Boot · MVC · Data JPA · Security · REST</p>
+          <p class="pila">Java 21 · Spring Boot · MVC · Data JPA · JdbcTemplate · Security · JWT · REST · RestTemplate</p>
         </div>
         <div class="col-texto">
           <p>
@@ -121,7 +121,9 @@
             Al cerrarlo encontré que la API redirigía al formulario de login en vez de
             responder <em>401</em>: un programa que la consumiera no podía distinguir un
             rechazo de una respuesta válida. Corregido y verificado con 35 comprobaciones
-            sobre la aplicación corriendo.
+            sobre la aplicación corriendo. Al cierre del módulo el proyecto quedó con 42 pruebas
+            automáticas y 63 comprobaciones, en H2 y en MariaDB, más JWT en la API, reportes con
+            JdbcTemplate e integración con RestTemplate.
           </p>
           <p class="enlaces">
             <a href="https://github.com/cstamigo-droid/springedumanager">Código y documentación →</a>
@@ -435,7 +437,9 @@
             </div>
             <p class="exp-nota">
               Las 35 comprobaciones quedaron en un guion reutilizable: la revisión dejó de ser un
-              recorrido manual que hay que recordar y pasa a correrse en un comando.
+              recorrido manual que hay que recordar y pasa a correrse en un comando. Las cifras de la
+              tabla son las del día del arreglo; el guion siguió creciendo con el proyecto y al cierre
+              del módulo corre 63 comprobaciones, con 42 pruebas automáticas al lado.
             </p>
           </dd>
 
