@@ -91,7 +91,7 @@
         <li><span>12</span> proyectos con ficha propia</li>
         <li><span>14</span> repositorios de código abiertos</li>
         <li><span>5</span> paquetes publicados en PyPI</li>
-        <li><span>28</span> enlaces verificados el 23-08-2026</li>
+        <li><span>29</span> enlaces verificados el 21-09-2026</li>
       </ul>
     </div>
   </aside>
@@ -688,21 +688,50 @@
     <section id="propios" aria-labelledby="t-propios">
       <h2 id="t-propios" class="titulo-seccion"><span class="num">06</span> Sistemas propios</h2>
       <p class="entrada-seccion">
-        Además de lo anterior mantengo un conjunto de sistemas en repositorios privados, casi
-        todos en Python. No los puedo enlazar, pero son donde practico arquitectura, tareas
-        programadas, integración entre servicios y tolerancia a fallos. Los menciono porque
-        explican de dónde salen varias de las decisiones que sí se pueden ver arriba.
+        Fuera del bootcamp mantengo software que otras personas usan todos los días. Vive en
+        repositorios privados y por eso no lo enlazo, pero es donde aprendí lo que se ve arriba:
+        que un sistema no está listo cuando compila, sino cuando sigue funcionando sin que nadie
+        lo mire. Puedo mostrarlo en funcionamiento a quien lo pida.
       </p>
       <dl class="privados">
-        <dt>Orquestación y datos</dt>
-        <dd>Plataforma central que coordina alrededor de noventa tareas programadas, con registro durable de eventos, verificación de efecto por componente y panel web de estado.</dd>
+        <dt>Informe diario con usuario real</dt>
+        <dd>Servicio que cada mañana reúne datos de varias fuentes, aplica las reglas que definió
+        el propio usuario y le envía un resumen por Telegram. Lleva meses corriendo solo, con una
+        persona que no soy yo dependiendo de que llegue. Ahí aprendí que un error silencioso es
+        peor que una caída: si no llega el mensaje, nadie se entera de que algo falló.</dd>
 
-        <dt>Servicios de análisis</dt>
-        <dd>Varios servicios FastAPI que ingieren datos de fuentes distintas, los normalizan y los publican a través de una API interna para que el resto del sistema no dependa del formato de origen.</dd>
+        <dt>Gestión para una empresa que factura</dt>
+        <dd>Sistema en Java para la operación de una sociedad real: emisión y control de documentos
+        tributarios, y vigilancia del plazo legal de ocho días para objetar una factura. Si ese
+        plazo se pasa, la empresa pierde el derecho a reclamar; el sistema avisa antes. No es un
+        caso de estudio: si falla, el costo es dinero.</dd>
+
+        <dt>Orquestación y tolerancia a fallos</dt>
+        <dd>Plataforma que coordina alrededor de noventa tareas programadas, con registro durable
+        de eventos y panel de estado. Lo que más me enseñó: comprobar el <em>efecto</em> y no el
+        código de salida. Una tarea puede terminar con éxito y no haber hecho su trabajo, y eso no
+        se ve en los registros hasta que lo buscás a propósito.</dd>
+
+        <dt>Servicios de datos</dt>
+        <dd>Servicios FastAPI que ingieren datos de fuentes distintas, los normalizan y los publican
+        por una API interna, para que el resto del sistema no dependa del formato de origen.</dd>
 
         <dt>Asistentes y automatización</dt>
-        <dd>Fábrica de servidores MCP, agente de búsqueda de empleo, generador de contenido y un sistema de gestión de conocimiento con recuperación por citas.</dd>
+        <dd>Fábrica de servidores MCP, agente de búsqueda de empleo, generador de contenido y un
+        sistema de gestión de conocimiento con recuperación por citas.</dd>
+      </dl>
 
+      <p class="entrada-seccion">
+        Dos de estos trabajos sí son públicos y se pueden abrir:
+      </p>
+      <dl class="privados">
+        <dt>Extractor de tiendas publicado en Apify</dt>
+        <dd>Actor publicado en el mercado de Apify, disponible para cualquiera que lo quiera
+        ejecutar. <a href="https://apify.com/cstamigo/shopify-store-scraper">apify.com/cstamigo/shopify-store-scraper</a></dd>
+
+        <dt>Servicio de servidores MCP a medida</dt>
+        <dd>Desarrollo de servidores MCP publicado como servicio en Fiverr, con los tres paquetes
+        de la sección anterior como muestra de trabajo.</dd>
       </dl>
     </section>
 
