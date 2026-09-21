@@ -496,3 +496,18 @@ a { color: inherit; }
   .exp-campos dd { border-top: 0; padding-top: 0; }
   .exp-campos dt { padding-bottom: .5rem; }
 }
+
+/* Credenciales de la cuenta de demostración, en la ficha que las necesita */
+.acceso-demo {
+  margin: .75rem 0 0;
+  padding: .7rem .9rem;
+  border-left: 3px solid var(--acento, #4a6fa5);
+  background: rgba(127, 127, 127, .07);
+  font-size: .92em;
+  line-height: 1.55;
+}
+.acceso-demo code {
+  padding: .1em .35em;
+  border-radius: 3px;
+  background: rgba(127, 127, 127, .16);
+}
