@@ -705,19 +705,41 @@
         <dd>Servicio que cada mañana reúne datos de varias fuentes, aplica las reglas que definió
         el propio usuario y le envía un resumen por Telegram. Lleva meses corriendo solo, con una
         persona que no soy yo dependiendo de que llegue. Ahí aprendí que un error silencioso es
-        peor que una caída: si no llega el mensaje, nadie se entera de que algo falló.</dd>
+        peor que una caída: si no llega el mensaje, nadie se entera de que algo falló.
+        <figure class="ev">
+          <img src="img/sistemas/informe-ensayo-general.png" alt="Ensayo general del envío diario: nueve fases, todas correctas, con el emisor bloqueado" loading="lazy">
+          <img src="img/sistemas/informe-verificacion.png" alt="Verificación de entrega: dos intentos de envío bloqueados, ninguno salió" loading="lazy">
+          <figcaption>Veinte minutos antes del envío real, el sistema corre el proceso entero con el
+          emisor bloqueado y comprueba que el mensaje de las 9:00 va a salir. Si algo se rompió durante
+          la noche, se sabe a las 8:40.</figcaption>
+        </figure></dd>
 
         <dt>Gestión para una empresa que factura</dt>
         <dd>Sistema en Java para la operación de una sociedad real: emisión y control de documentos
         tributarios, y vigilancia del plazo legal de ocho días para objetar una factura. Si ese
         plazo se pasa, la empresa pierde el derecho a reclamar; el sistema avisa antes. No es un
-        caso de estudio: si falla, el costo es dinero.</dd>
+        caso de estudio: si falla, el costo es dinero.
+        <figure class="ev">
+          <img src="img/sistemas/empresa-reloj-8-dias.png" alt="Reloj de ocho días: una factura en plazo, una urgente y una con el plazo ya vencido" loading="lazy">
+          <img src="img/sistemas/empresa-calendario.png" alt="Calendario tributario generado automáticamente con sus vencimientos" loading="lazy">
+          <img src="img/sistemas/empresa-idempotencia.png" alt="La misma factura cargada dos veces: el sistema la reconoce y no la duplica" loading="lazy">
+          <figcaption>Spring Boot sobre JPA. El plazo son ocho días corridos y corren desde que el
+          organismo recibe el documento, no desde que llega el correo. Datos de demostración
+          inventados; la lógica y los cálculos son del sistema.</figcaption>
+        </figure></dd>
 
         <dt>Orquestación y tolerancia a fallos</dt>
-        <dd>Plataforma que coordina alrededor de noventa tareas programadas, con registro durable
+        <dd>Plataforma que coordina más de ciento cincuenta tareas programadas, con registro durable
         de eventos y panel de estado. Lo que más me enseñó: comprobar el <em>efecto</em> y no el
         código de salida. Una tarea puede terminar con éxito y no haber hecho su trabajo, y eso no
-        se ve en los registros hasta que lo buscás a propósito.</dd>
+        se ve en los registros hasta que lo buscás a propósito.
+        <figure class="ev">
+          <img src="img/sistemas/orquestacion-chequeo.png" alt="Chequeo de salud: 154 tareas vigiladas y un veredicto que señala dos problemas" loading="lazy">
+          <img src="img/sistemas/orquestacion-efecto.png" alt="Comparación entre medir el código de salida y medir el efecto producido" loading="lazy">
+          <figcaption>El veredicto no es «todo bien»: es «revisar», y nombra lo que hay que mirar.
+          Nació de encontrar treinta y siete tareas terminando con éxito mientras sus archivos de
+          salida llevaban días sin cambiar.</figcaption>
+        </figure></dd>
 
         <dt>Servicios de datos</dt>
         <dd>Servicios FastAPI que ingieren datos de fuentes distintas, los normalizan y los publican

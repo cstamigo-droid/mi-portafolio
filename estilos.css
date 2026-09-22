@@ -511,3 +511,25 @@ a { color: inherit; }
   border-radius: 3px;
   background: rgba(127, 127, 127, .16);
 }
+
+/* Evidencia visual de los sistemas privados */
+figure.ev {
+  margin: 1rem 0 .25rem;
+  padding: 0;
+}
+figure.ev img {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 0 0 .6rem;
+  border: 1px solid rgba(127, 127, 127, .28);
+  border-radius: 6px;
+}
+figure.ev figcaption {
+  font-size: .88em;
+  line-height: 1.55;
+  color: inherit;
+  opacity: .72;
+  max-width: 760px;
+}
