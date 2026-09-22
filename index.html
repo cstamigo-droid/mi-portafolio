@@ -66,7 +66,8 @@
         <li><a href="#servicios">Servicios y APIs</a></li>
         <li><a href="#frontend">Front-end y datos</a></li>
         <li><a href="#publicado">Herramientas publicadas</a></li>
-        <li><a href="#propios">Sistemas propios</a></li>
+        <li><a href="#opensource">Código abierto</a>
+          <a href="#propios">Sistemas propios</a></li>
         <li><a href="#herramientas">Con qué trabajo</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ol>
@@ -654,22 +655,22 @@
           </a>
         </li>
         <li>
-          <a href="https://pypi.org/project/market-data-mcp/">
-            <span class="h-nom">market-data-mcp<span class="ver">PyPI 1.0.0</span></span>
+          <a href="https://github.com/cstamigo-droid/market-data-mcp">
+            <span class="h-nom">market-data-mcp</span>
             <span class="h-desc">Servidor bajo el estándar MCP que entrega datos de mercado en vivo a cualquier modelo de lenguaje.</span>
             <span class="h-meta">Python · MCP</span>
           </a>
         </li>
         <li>
           <a href="https://pypi.org/project/equity-intel-mcp/">
-            <span class="h-nom">equity-intel-mcp<span class="ver">PyPI 0.1.0</span></span>
+            <span class="h-nom">equity-intel-mcp<span class="ver">PyPI 0.1.1</span></span>
             <span class="h-desc">Servidor MCP de análisis de acciones: información societaria, valuación y presentaciones ante el regulador.</span>
             <span class="h-meta">Python · MCP</span>
           </a>
         </li>
         <li>
           <a href="https://pypi.org/project/crypto-intel-mcp/">
-            <span class="h-nom">crypto-intel-mcp<span class="ver">PyPI 0.1.0</span></span>
+            <span class="h-nom">crypto-intel-mcp<span class="ver">PyPI 0.1.1</span></span>
             <span class="h-desc">Servidor MCP equivalente para el mercado de criptomonedas, con precios y métricas de varias fuentes.</span>
             <span class="h-meta">Python · MCP</span>
           </a>
@@ -691,9 +692,49 @@
       </ul>
     </section>
 
+    <!-- ===================== 06 · CODIGO ABIERTO ===================== -->
+    <section id="opensource" aria-labelledby="t-opensource">
+      <h2 id="t-opensource" class="titulo-seccion"><span class="num">06</span> Contribución a código abierto</h2>
+      <p class="entrada-seccion">
+        Publicar código propio y que a uno le acepten un cambio en el código de otros son
+        cosas distintas. Lo segundo obliga a trabajar con las reglas ajenas y a que alguien
+        más revise el razonamiento.
+      </p>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra</h3>
+          <p class="pila">Java · orquestador de flujos · 28.000 estrellas</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Un usuario reportó que el disparador de sistema de archivos no ejecutaba nada y
+            no dejaba ningún aviso. La causa resultó estar en la documentación: el ejemplo
+            de configuración indicaba el nombre del paquete, mientras el motor compara
+            contra el nombre completo de la clase. Seguir el ejemplo al pie de la letra
+            equivale a no configurar nada.
+          </p>
+          <p class="detalle">
+            Reproduje el fallo en otra máquina, descarté cuatro causas candidatas midiendo
+            —no opinando—, usé un disparador de control para probar que el planificador
+            seguía vivo, y ubiqué la causa desensamblando el bytecode del motor de plugins.
+            El cambio final es de una línea. El trabajo fue llegar a ella.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-fs/pull/371">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/kestra/issues/19585">El análisis completo →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>22-09-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+    </section>
+
     <!-- ===================== 05 · PROPIOS ===================== -->
     <section id="propios" aria-labelledby="t-propios">
-      <h2 id="t-propios" class="titulo-seccion"><span class="num">06</span> Sistemas propios</h2>
+      <h2 id="t-propios" class="titulo-seccion"><span class="num">07</span> Sistemas propios</h2>
       <p class="entrada-seccion">
         Fuera del bootcamp mantengo software que otras personas usan todos los días. Vive en
         repositorios privados y por eso no lo enlazo, pero es donde aprendí lo que se ve arriba:
@@ -766,7 +807,7 @@
 
     <!-- ===================== 06 · HERRAMIENTAS ===================== -->
     <section id="herramientas" aria-labelledby="t-herramientas">
-      <h2 id="t-herramientas" class="titulo-seccion"><span class="num">07</span> Con qué trabajo</h2>
+      <h2 id="t-herramientas" class="titulo-seccion"><span class="num">08</span> Con qué trabajo</h2>
       <dl class="pila-tecnica">
         <dt>Lenguaje y framework</dt>
         <dd>Java&nbsp;21 · Spring Boot · Spring MVC · Spring Data JPA · Spring Security · Thymeleaf · Maven</dd>
@@ -785,7 +826,7 @@
 
     <!-- ===================== 07 · CONTACTO ===================== -->
     <section id="contacto" aria-labelledby="t-contacto">
-      <h2 id="t-contacto" class="titulo-seccion"><span class="num">08</span> Contacto</h2>
+      <h2 id="t-contacto" class="titulo-seccion"><span class="num">09</span> Contacto</h2>
       <p class="entrada-seccion">
         Busco mi primer puesto como desarrollador Java backend, en Santiago o remoto.
       </p>
