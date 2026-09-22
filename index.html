@@ -708,11 +708,10 @@
         </div>
         <div class="col-texto">
           <p>
-            Un usuario reportó que el disparador de sistema de archivos no ejecutaba nada y
-            no dejaba ningún aviso. La causa resultó estar en la documentación: el ejemplo
-            de configuración indicaba el nombre del paquete, mientras el motor compara
-            contra el nombre completo de la clase. Seguir el ejemplo al pie de la letra
-            equivale a no configurar nada.
+            Un usuario reportó que el disparador de sistema de archivos no ejecutaba nada.
+            La causa resultó estar en la documentación: el ejemplo de configuración indicaba
+            el nombre del paquete, mientras el motor compara contra el nombre completo de la
+            clase. Seguir el ejemplo al pie de la letra equivale a no configurar nada.
           </p>
           <p class="detalle">
             Reproduje el fallo en otra máquina, descarté cuatro causas candidatas midiendo
@@ -723,6 +722,37 @@
           <p class="enlaces">
             <a href="https://github.com/kestra-io/plugin-fs/pull/371">El cambio, ya integrado →</a>
             <a href="https://github.com/kestra-io/kestra/issues/19585">El análisis completo →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>22-09-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · guía de migración</h3>
+          <p class="pila">Documentación · expresiones Pebble</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            La guía oficial para migrar a la versión 2 enseñaba a comparar una fecha contra
+            un texto. Dentro de esa condición la fecha no es texto, así que la comparación
+            no se puede resolver: quien seguía la guía no obtenía un flujo que se saltea las
+            ejecuciones, sino uno que <strong>falla en cada ejecución programada</strong>.
+            Kestra acepta el flujo al guardarlo, de modo que nada avisa hasta que corre.
+          </p>
+          <p class="detalle">
+            Lo medí sobre un Kestra 2.0.2 local durante 24 ejecuciones, con un flujo de
+            control en paralelo para demostrar que el planificador estaba sano: el de la
+            guía falló las 24 veces y el de control pasó las 24. La corrección convierte
+            ambos lados a instante antes de compararlos, en vez de ordenarlos como cadenas
+            de texto —que para fechas con distinto huso horario da el resultado opuesto.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/docs/pull/5739">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/kestra/issues/19502">El fallo reportado →</a>
           </p>
         </div>
         <div class="col-sello">
