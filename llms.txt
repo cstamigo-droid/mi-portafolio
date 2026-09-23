@@ -23,9 +23,10 @@ Python, FastAPI, Docker, Git.
 aegis-idempotency, equity-intel-mcp, crypto-intel-mcp, signal-scanner
 
 ## Contribuciones integradas en proyectos de terceros
-Kestra (orquestador de flujos, 28.000 estrellas), ambas fusionadas el 22-09-2026:
-- Disparador de archivos que nunca se configuraba: https://github.com/kestra-io/plugin-fs/pull/371
-- Guia de migracion a v2 que producia flujos que fallan: https://github.com/kestra-io/docs/pull/5739
+Kestra (orquestador de flujos, 28.000 estrellas), tres cambios fusionados en main:
+- Disparador de archivos que nunca se configuraba (22-09-2026): https://github.com/kestra-io/plugin-fs/pull/371
+- Guia de migracion a v2 que producia flujos que fallan (22-09-2026): https://github.com/kestra-io/docs/pull/5739
+- Tabla que anunciaba una variable inexistente (23-09-2026): https://github.com/kestra-io/docs/pull/5760
 
 ## Contacto
 Correo: cstamigo@gmail.com
