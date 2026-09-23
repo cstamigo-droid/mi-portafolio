@@ -31,4 +31,4 @@ Kestra (orquestador de flujos, 28.000 estrellas), tres cambios fusionados en mai
 ## Contacto
 Correo: cstamigo@gmail.com
 GitHub: https://github.com/cstamigo-droid
-LinkedIn: https://www.linkedin.com/in/cristian-amigo-3a726a362
+LinkedIn: https://www.linkedin.com/in/cristian-amigo-dev
