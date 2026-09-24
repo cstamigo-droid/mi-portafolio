@@ -266,6 +266,15 @@ a { color: inherit; }
   color: var(--grafito);
 }
 
+/* Marca los proyectos entregados en el bootcamp, para que se distingan
+   de un vistazo de los que hice por fuera. */
+.etiqueta.curso {
+  font-weight: 600;
+  color: var(--sello);
+  border-top: 1px solid var(--pauta);
+  padding-top: .5rem;
+}
+
 /* ---------- Paquetes ---------- */
 
 .tabla-paquetes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--pauta); }
