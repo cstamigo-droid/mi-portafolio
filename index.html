@@ -50,7 +50,7 @@
 <a class="saltar" href="#java">Saltar al catálogo</a>
 
 <header class="portada">
-  <p class="ficha">Portafolio · Santiago de Chile · Actualizado 24-09-2026</p>
+  <p class="ficha">Portafolio · Santiago de Chile · Actualizado 29-09-2026</p>
   <h1 class="nombre" aria-label="Cristian Amigo">Cristian&nbsp;Amigo</h1>
   <p class="oficio">Desarrollador <em>Java backend</em></p>
   <p class="bajada">
@@ -700,7 +700,7 @@
             clase. Seguir el ejemplo al pie de la letra equivale a no configurar nada.
           </p>
           <p class="detalle">
-            Reproduje el fallo en otra máquina, descarté cuatro causas candidatas midiendo
+            Reproduje el fallo en una instancia local, descarté cinco causas candidatas midiendo
             —no opinando—, usé un disparador de control para probar que el planificador
             seguía vivo, y ubiqué la causa desensamblando el bytecode del motor de plugins.
             El cambio final es de una línea. El trabajo fue llegar a ella.
@@ -770,6 +770,40 @@
         </div>
         <div class="col-sello">
           <span class="sello">✓<span>23-09-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · herramienta de migración</h3>
+          <p class="pila">Go · pruebas unitarias · herramienta oficial v1 → v2</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            La herramienta oficial que convierte los flujos de la versión 1 a la 2 generaba,
+            para las condiciones de rango de fechas, la misma comparación que había corregido
+            en la guía: una fecha contra un texto. Todo flujo migrado con ella fallaba en cada
+            ejecución programada, y Kestra lo aceptaba al guardarlo sin advertir nada.
+          </p>
+          <p class="detalle">
+            Es mi primera contribución de código y no de documentación: cambia lo que la
+            herramienta genera para que ambos lados se comparen como instantes, trata aparte
+            los límites que traen sólo una hora del día y agrega las pruebas que lo demuestran.
+            Medido sobre un Kestra 2.0.2 local: la salida anterior fallaba en cada ejecución; la
+            nueva se ejecuta cuando la fecha cae dentro del rango y no se dispara cuando cae
+            fuera. Un segundo cambio corrige dos expresiones del mismo tipo en su documentación.
+            Al fusionarlos, el mantenedor anunció que agregará una función <code>isDateBetween</code>,
+            la sintaxis más simple que habíamos discutido en el reporte.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/kestra2-flow-migration/pull/18">El cambio de código, ya integrado →</a>
+            <a href="https://github.com/kestra-io/kestra2-flow-migration/pull/19">La corrección de su documentación →</a>
+            <a href="https://github.com/kestra-io/kestra/issues/19502">La conversación con el mantenedor →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>29-09-2026</span></span>
           <span class="etiqueta">Integrado en main</span>
         </div>
       </article>
