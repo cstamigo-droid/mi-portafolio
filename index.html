@@ -50,7 +50,7 @@
 <a class="saltar" href="#java">Saltar al catálogo</a>
 
 <header class="portada">
-  <p class="ficha">Portafolio · Santiago de Chile · Actualizado 29-09-2026</p>
+  <p class="ficha">Portafolio · Santiago de Chile · Actualizado 30-09-2026</p>
   <h1 class="nombre" aria-label="Cristian Amigo">Cristian&nbsp;Amigo</h1>
   <p class="oficio">Desarrollador <em>Java backend</em></p>
   <p class="bajada">
@@ -787,14 +787,14 @@
             ejecución programada, y Kestra lo aceptaba al guardarlo sin advertir nada.
           </p>
           <p class="detalle">
-            Es mi primera contribución de código y no de documentación: cambia lo que la
+            Fue mi primera contribución de código y no de documentación: cambia lo que la
             herramienta genera para que ambos lados se comparen como instantes, trata aparte
             los límites que traen sólo una hora del día y agrega las pruebas que lo demuestran.
             Medido sobre un Kestra 2.0.2 local: la salida anterior fallaba en cada ejecución; la
             nueva se ejecuta cuando la fecha cae dentro del rango y no se dispara cuando cae
             fuera. Un segundo cambio corrige dos expresiones del mismo tipo en su documentación.
-            Al fusionarlos, el mantenedor anunció que agregará una función <code>isDateBetween</code>,
-            la sintaxis más simple que habíamos discutido en el reporte.
+            A partir del reporte, el mantenedor agregó a Kestra la función <code>isDateBetween</code>
+            (versión 2.0.4), la sintaxis más simple que habíamos discutido.
           </p>
           <p class="enlaces">
             <a href="https://github.com/kestra-io/kestra2-flow-migration/pull/18">El cambio de código, ya integrado →</a>
@@ -804,6 +804,38 @@
         </div>
         <div class="col-sello">
           <span class="sello">✓<span>29-09-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · descifrado PGP</h3>
+          <p class="pila">Java · seguridad · pruebas unitarias · plugin oficial</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            El plugin que descifra archivos PGP nunca comprobaba el sello de integridad del
+            mensaje. Si alguien alteraba el archivo cifrado en el camino, Kestra lo descifraba
+            igual y daba la tarea por exitosa. Lo demostré con una factura: cambiando un solo
+            bit del archivo cifrado, sin la clave, "Pay 100 USD" pasaba a "Pay 900 USD".
+          </p>
+          <p class="detalle">
+            Es mi primera contribución de código en Java a un proyecto ajeno. El cambio
+            verifica el sello en los dos formatos del estándar (MDC y AEAD), rechaza los
+            mensajes antiguos que no lo tienen y distingue una alteración de un problema de
+            clave. Las pruebas nuevas fallan sin el arreglo y pasan con él. Lo probé en un
+            Kestra 1.3.39 antes y después, con mensajes reales de GnuPG: ninguna de 961
+            alteraciones produjo una salida corrupta. El mantenedor revisó el código, pidió cinco
+            ajustes, repitió la prueba por su cuenta (11 de 11 escenarios) y lo integró.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-crypto/pull/126">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-crypto/issues/123">El reporte →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>30-09-2026</span></span>
           <span class="etiqueta">Integrado en main</span>
         </div>
       </article>

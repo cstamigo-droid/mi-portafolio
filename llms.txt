@@ -23,12 +23,13 @@ Python, FastAPI, Docker, Git.
 aegis-idempotency, equity-intel-mcp, crypto-intel-mcp, signal-scanner
 
 ## Contribuciones integradas en proyectos de terceros
-Kestra (orquestador de flujos, 28.000 estrellas), cinco cambios fusionados:
+Kestra (orquestador de flujos, 28.000 estrellas), seis cambios fusionados:
 - Disparador de archivos que nunca se configuraba (22-09-2026): https://github.com/kestra-io/plugin-fs/pull/371
 - Guia de migracion a v2 que producia flujos que fallan (22-09-2026): https://github.com/kestra-io/docs/pull/5739
 - Tabla que anunciaba una variable inexistente (23-09-2026): https://github.com/kestra-io/docs/pull/5760
 - Herramienta oficial de migracion v1->v2 (codigo en Go con pruebas), comparaba fechas contra texto (29-09-2026): https://github.com/kestra-io/kestra2-flow-migration/pull/18
 - Documentacion de esa herramienta, dos expresiones del mismo tipo (29-09-2026): https://github.com/kestra-io/kestra2-flow-migration/pull/19
+- Plugin de descifrado PGP (codigo en Java con pruebas, seguridad): no verificaba la integridad del mensaje; un bit alterado cambiaba el contenido sin error (30-09-2026): https://github.com/kestra-io/plugin-crypto/pull/126
 
 ## Contacto
 Correo: cstamigo@gmail.com
