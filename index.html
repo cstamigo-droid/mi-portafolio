@@ -839,6 +839,89 @@
           <span class="etiqueta">Integrado en main</span>
         </div>
       </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · descifrado PGP para varios destinatarios</h3>
+          <p class="pila">Java · seguridad · plugin oficial</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            El mismo plugin de descifrado PGP solo probaba la primera clave de destinatario del
+            mensaje. Cuando un archivo se cifra para varios destinatarios y el tuyo no es el primero
+            de la lista, Kestra fallaba con "No private key found" aunque tuvieras la clave correcta.
+          </p>
+          <p class="detalle">
+            Segunda contribución de código al mismo plugin. El cambio recorre todos los destinatarios
+            del mensaje hasta encontrar una clave privada que coincida, en vez de mirar solo el
+            primero. Las pruebas nuevas —un mensaje cifrado para dos destinatarios, descifrado con la
+            clave del segundo— fallan sin el arreglo y pasan con él. Verificado antes y después en un
+            Kestra 1.3.39 local.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-crypto/pull/129">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-crypto/issues/127">El reporte →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>01-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · integración con Sentry</h3>
+          <p class="pila">Java · plugin oficial · pruebas unitarias</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            La tarea que envía eventos a Sentry tomaba el DSN —la cadena de conexión— y lo reenviaba
+            tal cual, fallando con "deprecated userinfo component" en las versiones nuevas de Sentry.
+            Tampoco servía para instancias self-hosted ni para DSN que llevan un prefijo de ruta.
+          </p>
+          <p class="detalle">
+            El cambio parsea el DSN en sus partes —clave secreta, host, prefijo de ruta— y arma la
+            petición correctamente, en lugar de mandar la cadena cruda. Las pruebas nuevas fallan sin
+            el arreglo y pasan con él. El mantenedor lo revisó en tres rondas y lo re-probó por su
+            cuenta contra una instancia self-hosted de Sentry antes de integrarlo.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-sentry/pull/61">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-sentry/issues/6">El reporte →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>05-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · CLI de Databricks</h3>
+          <p class="pila">Java · plugin oficial</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            La tarea DatabricksSQLCLI ignoraba dos de sus propias opciones: no cargaba los
+            <code>namespaceFiles</code> que el comando necesita y no usaba el <code>containerImage</code>
+            configurado, corriendo siempre con la imagen por defecto.
+          </p>
+          <p class="detalle">
+            El cambio hace que la tarea use de verdad las dos: monta los archivos del namespace y
+            respeta la imagen declarada. Con las pruebas que lo verifican y el control antes y después.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-databricks/pull/287">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-databricks/issues/260">El reporte →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>05-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
     </section>
 
     <!-- ===================== 05 · PROPIOS ===================== -->
