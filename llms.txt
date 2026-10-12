@@ -23,13 +23,18 @@ Python, FastAPI, Docker, Git.
 aegis-idempotency, equity-intel-mcp, crypto-intel-mcp, signal-scanner
 
 ## Contribuciones integradas en proyectos de terceros
-Kestra (orquestador de flujos, 28.000 estrellas), seis cambios fusionados:
+Kestra (orquestador de flujos, 28.000 estrellas), once cambios fusionados:
 - Disparador de archivos que nunca se configuraba (22-09-2026): https://github.com/kestra-io/plugin-fs/pull/371
 - Guia de migracion a v2 que producia flujos que fallan (22-09-2026): https://github.com/kestra-io/docs/pull/5739
 - Tabla que anunciaba una variable inexistente (23-09-2026): https://github.com/kestra-io/docs/pull/5760
 - Herramienta oficial de migracion v1->v2 (codigo en Go con pruebas), comparaba fechas contra texto (29-09-2026): https://github.com/kestra-io/kestra2-flow-migration/pull/18
 - Documentacion de esa herramienta, dos expresiones del mismo tipo (29-09-2026): https://github.com/kestra-io/kestra2-flow-migration/pull/19
 - Plugin de descifrado PGP (codigo en Java con pruebas, seguridad): no verificaba la integridad del mensaje; un bit alterado cambiaba el contenido sin error (30-09-2026): https://github.com/kestra-io/plugin-crypto/pull/126
+- Plugin de descifrado PGP, varios destinatarios (codigo en Java con pruebas): solo probaba la primera clave de destinatario (01-10-2026): https://github.com/kestra-io/plugin-crypto/pull/129
+- Plugin de Sentry (codigo en Java con pruebas): el DSN se reenviaba sin parsear y fallaba en versiones nuevas y self-hosted (05-10-2026): https://github.com/kestra-io/plugin-sentry/pull/61
+- Plugin de Databricks (codigo en Java con pruebas): la tarea DatabricksSQLCLI ignoraba namespaceFiles y containerImage (05-10-2026): https://github.com/kestra-io/plugin-databricks/pull/287
+- Plugin GraalVM (codigo en Java con pruebas): rows en FileTransform fallaba en Python y se ignoraba en JavaScript y Ruby (12-10-2026): https://github.com/kestra-io/plugin-graalvm/pull/98
+- Blueprint nuevo: recepcion por SFTP de archivos PGP cifrados y firmados, con cuarentena y deteccion de reenvios (12-10-2026): https://github.com/kestra-io/blueprints/pull/1139
 
 ## Contacto
 Correo: cstamigo@gmail.com

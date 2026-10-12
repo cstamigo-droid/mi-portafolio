@@ -922,6 +922,69 @@
           <span class="etiqueta">Integrado en main</span>
         </div>
       </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · filas múltiples en GraalVM</h3>
+          <p class="pila">Java · plugin oficial · pruebas unitarias</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Las tareas FileTransform documentan <code>rows</code> como la forma de emitir varias filas
+            de salida por cada fila de entrada, pero no funcionaba en ninguno de los tres lenguajes:
+            en Python la tarea fallaba con "No serializer found", y en JavaScript y Ruby
+            <code>rows</code> se ignoraba en silencio y se escribía la fila original.
+          </p>
+          <p class="detalle">
+            Había dos causas en el mismo método: <code>rows</code> se buscaba en el valor devuelto por
+            el script en lugar de en los bindings, donde se lee <code>row</code>, y sus elementos se
+            emitían sin convertir. El cambio lo lee de los bindings, convierte cada elemento, lo
+            reinicia antes de cada fila para que no se repita en las siguientes, descarta la fila si
+            la lista viene vacía y falla con un mensaje claro si no es una lista. Las pruebas nuevas
+            de los tres lenguajes fallan en main y pasan con el cambio. Lo verifiqué de punta a punta
+            en un Kestra 2.0.2, antes y después.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-graalvm/pull/98">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-graalvm/issues/96">El reporte →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>12-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · blueprint SFTP con PGP</h3>
+          <p class="pila">Flujo YAML · blueprint oficial · seguridad</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Bancos, procesadores de pago y proveedores de nómina suelen dejar archivos cifrados y
+            firmados con PGP en un servidor SFTP. Este blueprint vigila la bandeja de entrada y acepta
+            un archivo solo si se descifra con tu clave, pasa su verificación de integridad, lleva la
+            firma de la clave y el usuario del socio configurados, y su contenido no se había aceptado
+            antes. Todo lo demás va a cuarentena con su motivo.
+          </p>
+          <p class="detalle">
+            Es un flujo nuevo, escrito para Kestra Hacktober, que usa un disparador por evento de SFTP
+            y complementa un blueprint existente de verificación PGP. Lo probé en un Kestra 2.0.5 con
+            un servidor SFTP real y mensajes de GnuPG: archivos válidos, sin firma, firmados por otra
+            clave, con un bit alterado y reenvíos del mismo contenido con otro nombre. Cada caso
+            terminó en el resultado esperado. Documenta también lo que la firma no prueba. Lo revisó y
+            aprobó un miembro del equipo de Kestra.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/blueprints/pull/1139">El cambio, ya integrado →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>12-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
     </section>
 
     <!-- ===================== 05 · PROPIOS ===================== -->
