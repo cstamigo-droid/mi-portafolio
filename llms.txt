@@ -23,7 +23,7 @@ Python, FastAPI, Docker, Git.
 aegis-idempotency, equity-intel-mcp, crypto-intel-mcp, signal-scanner
 
 ## Contribuciones integradas en proyectos de terceros
-Kestra (orquestador de flujos, 28.000 estrellas), once cambios fusionados:
+Kestra (orquestador de flujos, 28.000 estrellas), trece cambios fusionados:
 - Disparador de archivos que nunca se configuraba (22-09-2026): https://github.com/kestra-io/plugin-fs/pull/371
 - Guia de migracion a v2 que producia flujos que fallan (22-09-2026): https://github.com/kestra-io/docs/pull/5739
 - Tabla que anunciaba una variable inexistente (23-09-2026): https://github.com/kestra-io/docs/pull/5760
@@ -35,6 +35,8 @@ Kestra (orquestador de flujos, 28.000 estrellas), once cambios fusionados:
 - Plugin de Databricks (codigo en Java con pruebas): la tarea DatabricksSQLCLI ignoraba namespaceFiles y containerImage (05-10-2026): https://github.com/kestra-io/plugin-databricks/pull/287
 - Plugin GraalVM (codigo en Java con pruebas): rows en FileTransform fallaba en Python y se ignoraba en JavaScript y Ruby (12-10-2026): https://github.com/kestra-io/plugin-graalvm/pull/98
 - Blueprint nuevo: recepcion por SFTP de archivos PGP cifrados y firmados, con cuarentena y deteccion de reenvios (12-10-2026): https://github.com/kestra-io/blueprints/pull/1139
+- Documentacion de la propiedad responseBody del disparador Webhook (version 2.1), con el ejemplo de Microsoft Graph (13-10-2026): https://github.com/kestra-io/docs/pull/5937
+- Plugin LDAP (codigo en Java con pruebas): Add, Delete, IonToLdif y LdifToIon aceptan una expresion en inputs (14-10-2026): https://github.com/kestra-io/plugin-ldap/pull/142
 
 ## Contacto
 Correo: cstamigo@gmail.com
