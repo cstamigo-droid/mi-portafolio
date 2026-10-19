@@ -1017,6 +1017,63 @@
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
+          <h3>Kestra · alertas con tildes en Sentry</h3>
+          <p class="pila">Java · plugin oficial · pruebas unitarias</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            La tarea SentryAlert fallaba con un error 400 de Sentry cuando el mensaje tenía tildes,
+            eñes o emojis, en cualquier sistema, y con cualquier texto cuando Kestra corría en
+            Windows. La alerta no llegaba.
+          </p>
+          <p class="detalle">
+            Al armar el mensaje a mano, el largo se contaba en caracteres en lugar de bytes y los
+            saltos de línea cambiaban según el sistema operativo, cuando el formato de Sentry pide
+            bytes y saltos de línea fijos. El cambio corrige las dos cosas y suma pruebas que fallan
+            en main y pasan con el arreglo. Lo verifiqué contra sentry.io en Linux y Windows, y el
+            mantenedor lo validó en Kestra 1.3 y 2.0 antes de integrarlo.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-sentry/pull/64">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-sentry/issues/63">El reporte →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>16-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
+          <h3>Kestra · nombres con tildes al mover archivos</h3>
+          <p class="pila">Java · plugin oficial · pruebas unitarias</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Al mover archivos por SFTP hacia una carpeta, los nombres con tildes o eñes quedaban
+            corruptos en el servidor (por ejemplo, <code>facturación.txt</code> llegaba como
+            <code>facturaciÃ³n.txt</code>) y la tarea informaba un nombre que no existía.
+          </p>
+          <p class="detalle">
+            El nombre se codificaba dos veces al armar la ruta de destino. El cambio arma esa ruta sin
+            la segunda codificación, en los tres lugares donde se repetía el mismo patrón, y suma
+            pruebas que fallan en main con el nombre corrupto y pasan con el arreglo. Lo verifiqué en
+            un Kestra 2.0.5 real, antes y después.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-fs/pull/383">El cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-fs/issues/381">El reporte →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>19-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
           <h3>Kestra · respuesta a medida en el webhook (documentación)</h3>
           <p class="pila">Documentación oficial · versión 2.1</p>
         </div>
