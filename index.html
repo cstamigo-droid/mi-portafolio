@@ -1074,6 +1074,36 @@
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
+          <h3>Kestra · archivos con % en el nombre</h3>
+          <p class="pila">Java · plugin oficial · pruebas unitarias</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            Las descargas y el disparador por SFTP fallaban con cualquier archivo que tuviera
+            <code>%</code> en el nombre (por ejemplo, <code>report 100%.txt</code>): la ruta se
+            codificaba dos veces y el archivo "no existía". Además, el filtro <code>regExp</code>
+            nunca encontraba esos archivos y la tarea terminaba en éxito sin hacer nada.
+          </p>
+          <p class="detalle">
+            Fueron dos cambios. El primero toma la ruta decodificada al armar la lista de archivos. El
+            segundo compara el filtro contra esa misma ruta, en List, Downloads, Delete y el disparador,
+            y lo deja documentado. Los dos traen pruebas que fallan en main y pasan con el arreglo, con la
+            suite completa en verde. Los mantenedores los validaron en Kestra 1.3 y 2.0, con SFTP, FTP y
+            FTPS, antes de integrarlos.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-fs/pull/394">El primer cambio, ya integrado →</a>
+            <a href="https://github.com/kestra-io/plugin-fs/pull/399">El segundo, ya integrado →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>23-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
           <h3>Kestra · respuesta a medida en el webhook (documentación)</h3>
           <p class="pila">Documentación oficial · versión 2.1</p>
         </div>

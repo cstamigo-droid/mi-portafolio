@@ -23,7 +23,7 @@ Python, FastAPI, Docker, Git.
 aegis-idempotency, equity-intel-mcp, crypto-intel-mcp, signal-scanner
 
 ## Contribuciones integradas en proyectos de terceros
-Kestra (orquestador de flujos, 28.000 estrellas), quince cambios fusionados:
+Kestra (orquestador de flujos, 28.000 estrellas), diecisiete cambios fusionados:
 - Disparador de archivos que nunca se configuraba (22-09-2026): https://github.com/kestra-io/plugin-fs/pull/371
 - Guia de migracion a v2 que producia flujos que fallan (22-09-2026): https://github.com/kestra-io/docs/pull/5739
 - Tabla que anunciaba una variable inexistente (23-09-2026): https://github.com/kestra-io/docs/pull/5760
@@ -39,6 +39,8 @@ Kestra (orquestador de flujos, 28.000 estrellas), quince cambios fusionados:
 - Plugin LDAP (codigo en Java con pruebas): Add, Delete, IonToLdif y LdifToIon aceptan una expresion en inputs (14-10-2026): https://github.com/kestra-io/plugin-ldap/pull/142
 - Plugin de Sentry (codigo en Java con pruebas): las alertas con tildes o emojis, o enviadas desde Windows, fallaban con error 400 (16-10-2026): https://github.com/kestra-io/plugin-sentry/pull/64
 - Plugin de archivos (codigo en Java con pruebas): mover por SFTP corrompia los nombres con tildes (19-10-2026): https://github.com/kestra-io/plugin-fs/pull/383
+- Plugin de archivos (codigo en Java con pruebas): descargas por SFTP fallaban con nombres que tienen % (21-10-2026): https://github.com/kestra-io/plugin-fs/pull/394
+- Plugin de archivos (codigo en Java con pruebas): el filtro regExp nunca encontraba nombres con % (23-10-2026): https://github.com/kestra-io/plugin-fs/pull/399
 
 ## Contacto
 Correo: cstamigo@gmail.com
