@@ -1104,6 +1104,31 @@
 
       <article class="ficha-proyecto">
         <div class="col-nombre">
+          <h3>Kestra · nombres con espacios al guardar en disco</h3>
+          <p class="pila">Java · plugin oficial · pruebas unitarias</p>
+        </div>
+        <div class="col-texto">
+          <p>
+            La tarea que guarda varios archivos en una carpeta local escribía <code>my%20report.csv</code>
+            en vez de <code>my report.csv</code>: tomaba el nombre de la dirección interna sin decodificarla.
+          </p>
+          <p class="detalle">
+            El arreglo usa la misma función que ya usaba la tarea de un solo archivo y trae una prueba que
+            falla en main y pasa con el cambio. Lo reporté, me lo asignaron, y el mantenedor lo aprobó y lo
+            integró el mismo día en que abrí el cambio.
+          </p>
+          <p class="enlaces">
+            <a href="https://github.com/kestra-io/plugin-fs/pull/410">El cambio, ya integrado →</a>
+          </p>
+        </div>
+        <div class="col-sello">
+          <span class="sello">✓<span>26-10-2026</span></span>
+          <span class="etiqueta">Integrado en main</span>
+        </div>
+      </article>
+
+      <article class="ficha-proyecto">
+        <div class="col-nombre">
           <h3>Kestra · respuesta a medida en el webhook (documentación)</h3>
           <p class="pila">Documentación oficial · versión 2.1</p>
         </div>
